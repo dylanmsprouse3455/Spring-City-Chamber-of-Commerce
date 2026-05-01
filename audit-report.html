@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring City Chamber Website Audit | DS Digital Designs</title>
+  <meta name="description" content="Digitized client-facing audit report for the Spring City Chamber website, prepared by DS Digital Designs." />
+  <style>
+    :root {
+      --navy: #071f42;
+      --navy2: #0d356b;
+      --blue: #2377bd;
+      --sky: #eaf6ff;
+      --gold: #c8892d;
+      --gold2: #fff3d7;
+      --green: #2d7457;
+      --green2: #eaf8f1;
+      --brick: #a94734;
+      --brick2: #fff0ec;
+      --purple: #6a54b8;
+      --purple2: #f3efff;
+      --ink: #142033;
+      --muted: #637087;
+      --paper: #ffffff;
+      --line: #dce7f4;
+      --soft: #f6f9fd;
+      --shadow: 0 22px 70px rgba(8, 31, 66, 0.16);
+      --shadow2: 0 12px 32px rgba(8, 31, 66, 0.10);
+      --radius: 24px;
+      --radius2: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+      background:
+        radial-gradient(circle at 14% 4%, rgba(35, 119, 189, 0.24), transparent 320px),
+        radial-gradient(circle at 86% 14%, rgba(200, 137, 45, 0.22), transparent 300px),
+        radial-gradient(circle at 50% 95%, rgba(106, 84, 184, 0.13), transparent 420px),
+        linear-gradient(180deg, #ffffff 0%, #f5f9fd 44%, #eef5fc 100%);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 20px 14px 34px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 10px;
+      border: 1px solid rgba(35, 119, 189, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 28px rgba(8, 31, 66, 0.08);
+      position: sticky;
+      top: 8px;
+      z-index: 20;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      padding-left: 4px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      aspect-ratio: 1;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      box-shadow: 0 9px 20px rgba(35, 119, 189, 0.25);
+      flex: 0 0 auto;
+    }
+
+    .brand-text { min-width: 0; }
+    .brand-text strong { display: block; color: var(--navy); font-size: 0.94rem; line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand-text span { display: block; color: var(--muted); font-size: 0.73rem; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .top-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      border: 1px solid rgba(8, 31, 66, 0.12);
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(8, 31, 66, 0.06);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(7, 31, 66, 0.96), rgba(13, 53, 107, 0.92)),
+        radial-gradient(circle at 80% 18%, rgba(200, 137, 45, 0.5), transparent 260px);
+      color: #fff;
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 6vw, 70px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(20px, 5vw, 46px);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -150px auto;
+      width: 420px;
+      aspect-ratio: 1;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09);
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(90deg, rgba(0,0,0,.6), transparent 75%);
+      z-index: -1;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 8px 12px;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.45rem, 7.4vw, 6.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .hero p {
+      margin: 16px 0 0;
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.6;
+    }
+
+    .hero-card {
+      align-self: center;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      padding: 18px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    .score-ring {
+      min-height: 190px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.20) 0 43%, transparent 44% 100%),
+        conic-gradient(from 200deg, #85d9a8, #f7d27d, #ffffff, #85d9a8);
+      color: var(--navy);
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .score-ring::after {
+      content: "";
+      position: absolute;
+      inset: 13px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      z-index: 0;
+    }
+
+    .score-ring div { position: relative; z-index: 1; }
+    .score-ring strong { display: block; font-size: 3.7rem; line-height: 1; letter-spacing: -0.08em; }
+    .score-ring span { display: block; margin-top: 6px; font-weight: 900; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; }
+
+    .mini-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-list span {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 9px 10px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .mini-list b { color: #fff; }
+
+    .section {
+      margin-top: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(35, 119, 189, 0.14);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow2);
+      padding: clamp(16px, 3vw, 26px);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 4vw, 3rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      padding: 15px;
+      min-height: 130px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .metric.good { border-color: rgba(45, 116, 87, .22); background: linear-gradient(180deg, #fff, var(--green2)); }
+    .metric.warn { border-color: rgba(200, 137, 45, .28); background: linear-gradient(180deg, #fff, var(--gold2)); }
+    .metric.info { border-color: rgba(35, 119, 189, .22); background: linear-gradient(180deg, #fff, var(--sky)); }
+    .metric.purple { border-color: rgba(106, 84, 184, .22); background: linear-gradient(180deg, #fff, var(--purple2)); }
+
+    .metric small {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .metric strong {
+      margin-top: 8px;
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 4vw, 2.6rem);
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .metric span {
+      margin-top: 8px;
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .panel {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 18px;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      color: var(--ink);
+      line-height: 1.42;
+      font-size: 0.95rem;
+    }
+
+    .dot {
+      width: 26px;
+      aspect-ratio: 1;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--green2);
+      color: var(--green);
+      font-weight: 900;
+      font-size: 0.8rem;
+    }
+
+    .dot.warn { background: var(--gold2); color: #8b5c14; }
+    .dot.fix { background: var(--purple2); color: var(--purple); }
+
+    .roadmap {
+      display: grid;
+      gap: 10px;
+      counter-reset: step;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 46px;
+      aspect-ratio: 1;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 9px 20px rgba(35, 119, 189, 0.18);
+    }
+
+    .step h3 { margin: 0; color: var(--navy); font-size: 1.02rem; }
+    .step p { margin: 5px 0 0; color: var(--muted); line-height: 1.45; font-size: .94rem; }
+
+    .price-band {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .price {
+      border-radius: 24px;
+      padding: 22px;
+      border: 1px solid rgba(35, 119, 189, .18);
+      background: linear-gradient(135deg, #fff, #f7fbff);
+      box-shadow: 0 12px 34px rgba(8, 31, 66, .07);
+    }
+
+    .price.featured {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+    }
+
+    .price small { display: block; color: var(--muted); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
+    .price.featured small { color: rgba(255,255,255,.72); }
+    .price strong { display: block; margin-top: 10px; font-size: clamp(2.1rem, 6vw, 4rem); letter-spacing: -0.08em; line-height: 1; color: var(--navy); }
+    .price.featured strong { color: #fff; }
+    .price p { margin: 10px 0 0; color: var(--muted); line-height: 1.5; }
+    .price.featured p { color: rgba(255,255,255,.82); }
+
+    .footer-note {
+      margin-top: 16px;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 16px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: .94rem;
+      box-shadow: 0 10px 26px rgba(8, 31, 66, .06);
+    }
+
+    .footer-note strong { color: var(--navy); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split, .price-band { grid-template-columns: 1fr; }
+      .section-title { align-items: start; flex-direction: column; }
+      .section-title p { text-align: left; }
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 10px 8px 20px; }
+      .topbar { border-radius: 22px; align-items: flex-start; flex-direction: column; position: static; }
+      .top-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+      .btn { justify-content: center; padding: 10px 8px; font-size: .76rem; }
+      .hero { border-radius: 26px; padding: 22px 16px; }
+      .metrics { grid-template-columns: 1fr; }
+      .score-ring { min-height: 160px; }
+      .score-ring strong { font-size: 3rem; }
+      .section { padding: 14px; border-radius: 20px; }
+      .step { grid-template-columns: 38px minmax(0,1fr); }
+      .step::before { width: 38px; border-radius: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="Page navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">DS</span>
+        <span class="brand-text">
+          <strong>Spring City Chamber Audit</strong>
+          <span>Digitized report by DS Digital Designs</span>
+        </span>
+      </a>
+      <div class="top-actions">
+        <a class="btn" href="index.html">← Sitemap</a>
+        <a class="btn primary" href="#recommendation">View Plan</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Client-facing website audit · April 24, 2026</p>
+        <h1>Functional site. Clear upgrade path.</h1>
+        <p>The Spring City Chamber website is live, reachable, secure, and working. The real opportunity is making the site cleaner, easier to update, easier to scan, and more useful for members, visitors, and local businesses.</p>
+      </div>
+      <aside class="hero-card" aria-label="Audit snapshot">
+        <div class="score-ring">
+          <div>
+            <strong>Live</strong>
+            <span>Website Status</span>
+          </div>
+        </div>
+        <div class="mini-list">
+          <span><b>Target</b> springcitychamber.org</span>
+          <span><b>Homepage</b> 200 OK</span>
+          <span><b>SSL</b> Active</span>
+          <span><b>Platform Clue</b> Wix</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="snapshot">
+      <div class="section-title">
+        <h2>Audit Snapshot</h2>
+        <p>Fast scan. Clean facts. No panic.</p>
+      </div>
+      <div class="metrics">
+        <article class="metric good"><small>Homepage</small><strong>200 OK</strong><span>The homepage loads successfully and is reachable.</span></article>
+        <article class="metric info"><small>Load Time</small><strong>0.971s</strong><span>The homepage responded quickly during the scan.</span></article>
+        <article class="metric good"><small>Broken Links</small><strong>0</strong><span>No broken or problem links were found in the reviewed links.</span></article>
+        <article class="metric warn"><small>H1 Count</small><strong>3</strong><span>The homepage uses multiple H1 headings and should be cleaned up.</span></article>
+        <article class="metric purple"><small>Links</small><strong>27</strong><span>23 internal links and 4 external links were found.</span></article>
+        <article class="metric good"><small>Images</small><strong>5</strong><span>Images were found with no missing alt text in the homepage scan.</span></article>
+        <article class="metric info"><small>Contact Signals</small><strong>Visible</strong><span>Email, phone, and social links are present on the site.</span></article>
+        <article class="metric warn"><small>Documents</small><strong>0</strong><span>No downloadable files were found from the homepage scan.</span></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>What is already working?</h2>
+        <p>The foundation is not broken.</p>
+      </div>
+      <div class="split">
+        <article class="panel">
+          <h3>Confirmed Strengths</h3>
+          <ul class="checklist">
+            <li><span class="dot">✓</span><span>The homepage loads successfully and the website is accessible.</span></li>
+            <li><span class="dot">✓</span><span>SSL is active, so visitors can access the site through a secure connection.</span></li>
+            <li><span class="dot">✓</span><span>No broken links were found during the reviewed scan.</span></li>
+            <li><span class="dot">✓</span><span>Homepage images had alt text, which supports accessibility.</span></li>
+            <li><span class="dot">✓</span><span>Contact information and social links are visible.</span></li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Main Improvement Areas</h3>
+          <ul class="checklist">
+            <li><span class="dot warn">!</span><span>Clean up the homepage heading structure so the page has one clear main H1.</span></li>
+            <li><span class="dot warn">!</span><span>Make the member directory easier to browse by category, business card, and contact detail.</span></li>
+            <li><span class="dot warn">!</span><span>Make events easier to scan by name, date, time, location, and status.</span></li>
+            <li><span class="dot warn">!</span><span>Add a clearer update flow for announcements, events, members, and homepage edits.</span></li>
+            <li><span class="dot warn">!</span><span>Organize downloadable forms or documents if the Chamber uses them.</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="recommendation">
+      <div class="section-title">
+        <h2>Recommended Direction</h2>
+        <p>Improve the system, not just the surface.</p>
+      </div>
+      <div class="roadmap">
+        <article class="step"><div><h3>Clean up homepage structure</h3><p>Use one clear main heading, then organize the rest of the homepage with H2 and H3 sections so users and search engines can understand the page faster.</p></div></article>
+        <article class="step"><div><h3>Add a freshness area</h3><p>Create a clear space for current announcements, upcoming events, Chamber news, and member updates so the site feels active.</p></div></article>
+        <article class="step"><div><h3>Upgrade the member directory</h3><p>Use organized member cards with categories, contact details, website links, and social links where available.</p></div></article>
+        <article class="step"><div><h3>Upgrade event presentation</h3><p>Make events scannable with event name, date, time, location, description, and upcoming/archive organization.</p></div></article>
+        <article class="step"><div><h3>Simplify long-term updates</h3><p>Create a repeatable maintenance flow for member updates, event postings, announcements, homepage edits, and small content changes.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Soft Project Estimate</h2>
+        <p>Planning estimate only. Not a locked invoice.</p>
+      </div>
+      <div class="price-band">
+        <article class="price featured">
+          <small>Website Restructure / Rebuild</small>
+          <strong>$500-$900</strong>
+          <p>Includes homepage cleanup, content cleanup, layout restructuring, member directory improvements, event presentation improvements, general usability improvements, and mobile-friendly presentation cleanup.</p>
+        </article>
+        <article class="price">
+          <small>Optional Monthly Maintenance</small>
+          <strong>$50-$150</strong>
+          <p>Includes member updates, event postings, announcement updates, homepage edits, small content changes, and general website upkeep.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="footer-note">
+      <strong>Final Note:</strong> The Spring City Chamber website does not appear to need emergency repair. The strongest long-term value is a focused improvement project that makes the website cleaner, easier to update, and easier for visitors, members, and local businesses to use.
+      <br /><br />Prepared by <strong>DS Digital Designs</strong> · Website reviewed: <strong>springcitychamber.org</strong> · Report type: <strong>Client-Facing Website Audit Summary</strong>
+    </section>
+  </main>
+</body>
+</html>
