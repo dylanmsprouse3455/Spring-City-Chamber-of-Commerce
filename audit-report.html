@@ -4,1119 +4,380 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spring City Chamber Website Audit | DS Digital Designs</title>
-  <meta name="description" content="Premium digitized website audit report for the Spring City Chamber of Commerce, prepared by DS Digital Designs." />
+  <meta name="description" content="Client-ready wizard-style website audit report for the Spring City Chamber of Commerce, prepared by DS Digital Designs." />
   <style>
     :root {
-      --navy: #061b3a;
-      --navy-2: #0b2f62;
-      --blue: #1d73bd;
-      --blue-2: #dff1ff;
-      --gold: #c8892d;
-      --gold-2: #fff4d9;
+      --navy: #071b38;
+      --navy-2: #0c315f;
+      --blue: #1f73b7;
+      --blue-soft: #e7f3ff;
+      --gold: #c58a32;
+      --gold-soft: #fff5dc;
       --green: #2f7658;
-      --green-2: #eaf8f1;
-      --brick: #ad4b37;
-      --brick-2: #fff0ec;
-      --purple: #6f58bd;
-      --purple-2: #f2efff;
-      --ink: #132033;
-      --muted: #617089;
-      --line: #d9e6f4;
+      --green-soft: #eaf8f1;
+      --red: #ad4b37;
+      --red-soft: #fff0ec;
+      --ink: #142033;
+      --muted: #65748a;
+      --line: #dbe6f1;
       --paper: #ffffff;
-      --soft: #f5f9fd;
-      --shadow: 0 24px 80px rgba(6, 27, 58, 0.18);
-      --shadow-soft: 0 14px 38px rgba(6, 27, 58, 0.10);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 16px;
+      --shadow: 0 24px 70px rgba(7, 27, 56, 0.16);
+      --shadow-soft: 0 14px 36px rgba(7, 27, 56, 0.1);
     }
 
     * { box-sizing: border-box; }
-
     html {
       min-height: 100%;
-      scroll-behavior: smooth;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 4%, rgba(29, 115, 189, 0.28), transparent 340px),
-        radial-gradient(circle at 90% 7%, rgba(200, 137, 45, 0.24), transparent 360px),
-        radial-gradient(circle at 50% 100%, rgba(111, 88, 189, 0.16), transparent 480px),
-        linear-gradient(180deg, #ffffff 0%, #f6f9fd 38%, #ecf4fb 100%);
+        radial-gradient(circle at 10% 0%, rgba(31, 115, 183, 0.18), transparent 330px),
+        radial-gradient(circle at 90% 8%, rgba(197, 138, 50, 0.2), transparent 360px),
+        linear-gradient(180deg, #ffffff 0%, #f7fbff 42%, #edf5fb 100%);
       font-family: Arial, Helvetica, sans-serif;
     }
-
-    body {
-      margin: 0;
-      min-height: 100%;
-      overflow-x: hidden;
-    }
-
+    body { margin: 0; min-height: 100%; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-    .page-shell {
-      width: min(1180px, 100%);
-      margin: 0 auto;
-      padding: 14px 12px 34px;
-    }
-
+    .page-shell { width: min(1120px, 100%); margin: 0 auto; padding: 14px 14px 34px; }
     .topbar {
       position: sticky;
       top: 10px;
-      z-index: 30;
+      z-index: 20;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       padding: 10px;
-      border: 1px solid rgba(29, 115, 189, 0.18);
+      border: 1px solid rgba(31, 115, 183, 0.18);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(18px);
-      box-shadow: 0 10px 30px rgba(6, 27, 58, 0.10);
-      margin-bottom: 14px;
+      box-shadow: 0 12px 32px rgba(7, 27, 56, 0.1);
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
+    .brand { min-width: 0; display: flex; align-items: center; gap: 10px; }
     .brand-badge {
       width: 42px;
       aspect-ratio: 1;
-      border-radius: 999px;
+      flex: 0 0 auto;
       display: grid;
       place-items: center;
+      border-radius: 999px;
       color: #fff;
       background: linear-gradient(135deg, var(--navy), var(--blue));
-      font-weight: 1000;
-      letter-spacing: -0.06em;
-      box-shadow: 0 10px 24px rgba(29, 115, 189, 0.25);
-      flex: 0 0 auto;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      box-shadow: 0 10px 24px rgba(31, 115, 183, 0.24);
     }
-
     .brand-copy { min-width: 0; }
-    .brand-copy strong { display: block; color: var(--navy); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .brand-copy span { display: block; margin-top: 3px; color: var(--muted); font-size: 0.74rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand-copy strong, .brand-copy span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .brand-copy strong { color: var(--navy); font-size: 0.95rem; line-height: 1.1; }
+    .brand-copy span { margin-top: 3px; color: var(--muted); font-size: 0.72rem; font-weight: 800; }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .button {
+    .button, .wizard-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 39px;
-      padding: 10px 13px;
+      min-height: 40px;
+      padding: 10px 14px;
+      border: 1px solid rgba(7, 27, 56, 0.12);
       border-radius: 999px;
-      border: 1px solid rgba(6, 27, 58, 0.12);
       background: #fff;
       color: var(--navy);
-      font-size: 0.82rem;
-      font-weight: 950;
-      box-shadow: 0 9px 20px rgba(6, 27, 58, 0.06);
+      font: inherit;
+      font-size: 0.84rem;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 9px 20px rgba(7, 27, 56, 0.06);
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease, background 180ms ease;
     }
-
-    .button.primary {
-      color: #fff;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-    }
+    .button:hover, .wizard-button:hover { transform: translateY(-1px); box-shadow: 0 13px 24px rgba(7, 27, 56, 0.1); }
+    .wizard-button.primary { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--navy), var(--blue)); }
+    .wizard-button:disabled { cursor: not-allowed; opacity: 0.44; transform: none; box-shadow: none; }
 
     .hero {
       position: relative;
+      margin-top: 14px;
       overflow: hidden;
-      border-radius: 38px;
+      border-radius: 32px;
       color: #fff;
       background:
-        radial-gradient(circle at 82% 12%, rgba(255, 220, 145, 0.32), transparent 310px),
-        radial-gradient(circle at 15% 90%, rgba(94, 180, 235, 0.24), transparent 330px),
-        linear-gradient(135deg, rgba(6, 27, 58, 0.99), rgba(12, 52, 106, 0.96) 48%, rgba(7, 31, 66, 0.99));
+        radial-gradient(circle at 85% 10%, rgba(255, 222, 150, 0.24), transparent 300px),
+        linear-gradient(135deg, rgba(7, 27, 56, 0.98), rgba(13, 56, 108, 0.96) 54%, rgba(7, 27, 56, 0.98));
       box-shadow: var(--shadow);
       isolation: isolate;
     }
-
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
-      background-image:
-        linear-gradient(rgba(255,255,255,.065) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.065) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(90deg, rgba(0,0,0,.7), transparent 82%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 480px;
-      aspect-ratio: 1;
-      border-radius: 999px;
-      right: -180px;
-      bottom: -220px;
-      z-index: -1;
-      background: rgba(255, 255, 255, 0.10);
-    }
-
-    .hero-inner {
-      padding: clamp(24px, 6vw, 72px);
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-      gap: clamp(18px, 5vw, 48px);
-      align-items: center;
-    }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin: 0 0 14px;
-      padding: 9px 12px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 999px;
-      background: rgba(255,255,255,.11);
-      color: rgba(255,255,255,.86);
-      font-size: .76rem;
-      font-weight: 950;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .pulse {
-      width: 9px;
-      aspect-ratio: 1;
-      border-radius: 999px;
-      background: #8ff0b1;
-      box-shadow: 0 0 0 7px rgba(143, 240, 177, .14);
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 780px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.7rem, 8vw, 7rem);
-      line-height: .86;
-      letter-spacing: -.075em;
-    }
-
-    .hero-lead {
-      margin: 18px 0 0;
-      max-width: 680px;
-      color: rgba(255,255,255,.82);
-      font-size: clamp(1rem, 2vw, 1.22rem);
-      line-height: 1.62;
-    }
-
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .hero-pills span {
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 999px;
-      background: rgba(255,255,255,.10);
-      padding: 9px 11px;
-      color: rgba(255,255,255,.88);
-      font-size: .82rem;
-      font-weight: 900;
-    }
-
-    .hero-dashboard {
-      border: 1px solid rgba(255,255,255,.20);
-      border-radius: 30px;
-      background: rgba(255,255,255,.13);
-      backdrop-filter: blur(18px);
-      padding: 14px;
-      box-shadow: 0 26px 70px rgba(0,0,0,.20);
-    }
-
-    .status-card {
-      border-radius: 24px;
-      background: rgba(255,255,255,.92);
-      color: var(--navy);
-      padding: 18px;
-      min-height: 170px;
-      display: grid;
-      align-content: space-between;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .status-card::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      aspect-ratio: 1;
-      right: -70px;
-      top: -85px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(47,118,88,.34), transparent 70%);
-    }
-
-    .status-card small {
-      display: block;
-      color: var(--muted);
-      font-weight: 950;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .status-card strong {
-      display: block;
-      margin-top: 10px;
-      font-size: 3.4rem;
-      line-height: .9;
-      letter-spacing: -.08em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .status-card p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.45;
-      font-weight: 750;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dash-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .dash-mini {
-      border-radius: 18px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.14);
-      padding: 13px;
-      min-height: 92px;
-    }
-
-    .dash-mini small {
-      display: block;
-      color: rgba(255,255,255,.62);
-      font-size: .68rem;
-      font-weight: 950;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-    }
-
-    .dash-mini strong {
-      display: block;
-      margin-top: 8px;
-      color: #fff;
-      font-size: 1.45rem;
-      line-height: 1;
-      letter-spacing: -.05em;
-    }
-
-    .dash-mini span {
-      display: block;
-      margin-top: 5px;
-      color: rgba(255,255,255,.72);
-      font-size: .8rem;
-      line-height: 1.3;
-      font-weight: 750;
-    }
-
-    .quick-nav {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-      margin: 14px 0 0;
-    }
-
-    .quick-nav a {
-      display: grid;
-      place-items: center;
-      min-height: 58px;
-      border: 1px solid rgba(29, 115, 189, .18);
-      border-radius: 18px;
-      background: rgba(255,255,255,.78);
-      box-shadow: 0 8px 22px rgba(6,27,58,.07);
-      color: var(--navy);
-      font-size: .82rem;
-      font-weight: 950;
-      text-align: center;
-    }
-
-    .section {
-      margin-top: 14px;
-      border: 1px solid rgba(29, 115, 189, 0.14);
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.86);
-      box-shadow: var(--shadow-soft);
-      padding: clamp(16px, 3vw, 28px);
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .section-label {
-      margin: 0 0 8px;
-      color: var(--blue);
-      font-size: .74rem;
-      font-weight: 950;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin: 0;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.8rem, 4.5vw, 3.55rem);
-      line-height: .93;
-      letter-spacing: -.055em;
-    }
-
-    .section-head p {
-      margin: 0;
-      max-width: 440px;
-      color: var(--muted);
-      font-size: .95rem;
-      line-height: 1.5;
-      font-weight: 750;
-      text-align: right;
-    }
-
-    .executive-card {
-      display: grid;
-      grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
-      gap: 14px;
-    }
-
-    .verdict {
-      border-radius: 26px;
-      background: linear-gradient(135deg, var(--green), #52a87b);
-      color: #fff;
-      padding: 22px;
-      min-height: 290px;
-      display: grid;
-      align-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .verdict::before {
-      content: "";
-      position: absolute;
-      width: 240px;
-      aspect-ratio: 1;
-      right: -90px;
-      top: -100px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.16);
-    }
-
-    .verdict small {
-      font-size: .72rem;
-      font-weight: 950;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.72);
-    }
-
-    .verdict strong {
-      display: block;
-      margin-top: 12px;
-      font-size: clamp(2.2rem, 6vw, 4.4rem);
-      line-height: .85;
-      letter-spacing: -.08em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .verdict p {
-      margin: 20px 0 0;
-      color: rgba(255,255,255,.82);
-      line-height: 1.5;
-      font-weight: 750;
-      position: relative;
-      z-index: 1;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .summary-tile {
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, #fff, #f8fbff);
-      padding: 18px;
-      min-height: 140px;
-      display: grid;
-      align-content: space-between;
-    }
-
-    .summary-tile.good { background: linear-gradient(180deg, #fff, var(--green-2)); border-color: rgba(47,118,88,.20); }
-    .summary-tile.warn { background: linear-gradient(180deg, #fff, var(--gold-2)); border-color: rgba(200,137,45,.25); }
-    .summary-tile.purple { background: linear-gradient(180deg, #fff, var(--purple-2)); border-color: rgba(111,88,189,.20); }
-    .summary-tile.brick { background: linear-gradient(180deg, #fff, var(--brick-2)); border-color: rgba(173,75,55,.20); }
-
-    .summary-tile small {
-      color: var(--muted);
-      font-size: .72rem;
-      font-weight: 950;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .summary-tile strong {
-      display: block;
-      margin-top: 8px;
-      color: var(--navy);
-      font-size: clamp(1.75rem, 5vw, 3rem);
-      line-height: .95;
-      letter-spacing: -.075em;
-    }
-
-    .summary-tile span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.38;
-      font-weight: 750;
-    }
-
-    .findings-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .finding {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: 0 10px 24px rgba(6,27,58,.06);
-      padding: 18px;
-      min-height: 260px;
-      display: grid;
-      align-content: space-between;
-    }
-
-    .finding::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 5px;
-      background: var(--blue);
-    }
-
-    .finding.good::before { background: var(--green); }
-    .finding.warn::before { background: var(--gold); }
-    .finding.fix::before { background: var(--purple); }
-    .finding.issue::before { background: var(--brick); }
-
-    .finding-icon {
-      width: 46px;
-      aspect-ratio: 1;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      font-size: 1.2rem;
-      font-weight: 950;
-      color: var(--navy);
-      background: var(--blue-2);
-    }
-
-    .finding.good .finding-icon { color: var(--green); background: var(--green-2); }
-    .finding.warn .finding-icon { color: #8d5e15; background: var(--gold-2); }
-    .finding.fix .finding-icon { color: var(--purple); background: var(--purple-2); }
-    .finding.issue .finding-icon { color: var(--brick); background: var(--brick-2); }
-
-    .finding h3 {
-      margin: 14px 0 8px;
-      color: var(--navy);
-      font-size: 1.18rem;
-      line-height: 1.05;
-      letter-spacing: -.03em;
-    }
-
-    .finding p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.48;
-      font-size: .94rem;
-      font-weight: 720;
-    }
-
-    .finding-foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 18px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .78rem;
-      font-weight: 950;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .impact {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 6px 8px;
-      background: #f1f6fb;
-      color: var(--navy);
-      white-space: nowrap;
-    }
-
-    .matrix {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr 1fr;
-      gap: 1px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      overflow: hidden;
-      background: var(--line);
-    }
-
-    .matrix > div {
-      background: #fff;
-      padding: 14px;
-      min-height: 74px;
-      display: grid;
-      align-content: center;
-    }
-
-    .matrix .head {
-      min-height: auto;
-      background: linear-gradient(135deg, var(--navy), var(--navy-2));
-      color: #fff;
-      font-size: .76rem;
-      font-weight: 950;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .matrix strong { color: var(--navy); }
-    .matrix span { color: var(--muted); font-size: .9rem; line-height: 1.36; font-weight: 720; }
-
-    .roadmap {
-      display: grid;
-      gap: 12px;
-      counter-reset: road;
-    }
-
-    .road-step {
-      display: grid;
-      grid-template-columns: 58px minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 14px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, #fff, #f8fbff);
-      padding: 16px;
-      box-shadow: 0 10px 24px rgba(6,27,58,.05);
-    }
-
-    .road-step::before {
-      counter-increment: road;
-      content: counter(road);
-      width: 58px;
-      aspect-ratio: 1;
-      border-radius: 20px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      font-size: 1.2rem;
-      font-weight: 950;
-      box-shadow: 0 12px 24px rgba(29,115,189,.18);
-    }
-
-    .road-step h3 { margin: 0; color: var(--navy); font-size: 1.1rem; letter-spacing: -.03em; }
-    .road-step p { margin: 5px 0 0; color: var(--muted); font-size: .94rem; line-height: 1.45; font-weight: 720; }
-    .road-tag { border-radius: 999px; padding: 8px 10px; background: var(--blue-2); color: var(--navy); font-size: .74rem; font-weight: 950; text-transform: uppercase; letter-spacing: .1em; white-space: nowrap; }
-
-    .proposal {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .price-card {
-      border-radius: 30px;
-      border: 1px solid rgba(29,115,189,.18);
-      background: #fff;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .price-top {
-      padding: 22px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 90% 0%, rgba(255,255,255,.20), transparent 180px),
-        linear-gradient(135deg, var(--navy), var(--blue));
-    }
-
-    .price-top small {
-      display: block;
-      color: rgba(255,255,255,.70);
-      font-size: .76rem;
-      font-weight: 950;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .price-top strong {
-      display: block;
-      margin-top: 10px;
-      font-size: clamp(2.5rem, 7vw, 5.1rem);
-      line-height: .9;
-      letter-spacing: -.09em;
-    }
-
-    .price-top p {
-      margin: 12px 0 0;
-      color: rgba(255,255,255,.80);
-      line-height: 1.48;
-      font-weight: 740;
-    }
-
-    .scope-list {
-      list-style: none;
-      padding: 18px;
-      margin: 0;
-      display: grid;
-      gap: 9px;
-    }
-
-    .scope-list li {
-      display: grid;
-      grid-template-columns: 24px minmax(0,1fr);
-      gap: 9px;
-      align-items: start;
-      color: var(--muted);
-      line-height: 1.38;
-      font-size: .92rem;
-      font-weight: 720;
-    }
-
-    .scope-list li::before {
-      content: "✓";
-      width: 24px;
-      aspect-ratio: 1;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: var(--green-2);
-      color: var(--green);
-      font-weight: 950;
-      font-size: .75rem;
-    }
-
-    .maintenance-card {
-      border-radius: 30px;
-      border: 1px solid rgba(200,137,45,.25);
-      background: linear-gradient(180deg, #fff, var(--gold-2));
-      padding: 22px;
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      align-content: space-between;
-    }
-
-    .maintenance-card small {
-      color: #8a5d17;
-      font-size: .76rem;
-      font-weight: 950;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .maintenance-card strong {
-      display: block;
-      margin-top: 10px;
-      color: var(--navy);
-      font-size: clamp(2.3rem, 7vw, 4.6rem);
-      line-height: .9;
-      letter-spacing: -.085em;
-    }
-
-    .maintenance-card p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      line-height: 1.5;
-      font-weight: 740;
-    }
-
-    .final-strip {
-      margin-top: 14px;
-      border-radius: 34px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(143,240,177,.18), transparent 240px),
-        linear-gradient(135deg, var(--navy), #0a2854 58%, #102d58);
-      box-shadow: var(--shadow);
-      padding: clamp(22px, 5vw, 48px);
-      display: grid;
-      grid-template-columns: minmax(0,1fr) auto;
-      gap: 20px;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
+      background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(90deg, rgba(0,0,0,.75), transparent 82%);
+    }
+    .hero-inner { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(280px,.9fr); gap: clamp(18px,4vw,42px); align-items: center; padding: clamp(24px,5vw,52px); }
+    .kicker, .eyebrow { margin: 0 0 12px; color: var(--blue); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .hero .kicker { display: inline-flex; align-items: center; gap: 8px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.82); }
+    .pulse { width: 8px; aspect-ratio: 1; border-radius: 999px; background: #8ff0b1; box-shadow: 0 0 0 6px rgba(143,240,177,.14); }
+    h1, h2, h3 { color: var(--navy); }
+    h1 { margin: 0; max-width: 780px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 5vw, 4rem); line-height: .98; letter-spacing: -.04em; }
+    h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 3vw, 2.25rem); line-height: 1.06; letter-spacing: -.035em; }
+    .hero-lead { max-width: 680px; margin: 16px 0 0; color: rgba(255,255,255,.82); font-size: clamp(.98rem, 1.8vw, 1.08rem); line-height: 1.58; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .hero-pills span { padding: 8px 10px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.86); font-size: .8rem; font-weight: 800; }
+    .hero-panel { border: 1px solid rgba(255,255,255,.18); border-radius: 24px; background: rgba(255,255,255,.13); backdrop-filter: blur(18px); padding: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.2); }
+    .status-card { min-height: 150px; display: grid; align-content: space-between; padding: 18px; border-radius: 20px; background: rgba(255,255,255,.94); color: var(--navy); }
+    .status-card small, .metric small, .price-card small { display: block; color: var(--muted); font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .status-card strong { display: block; margin-top: 8px; font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1; letter-spacing: -.05em; }
+    .status-card p { margin: 10px 0 0; color: var(--muted); font-size: .95rem; line-height: 1.45; font-weight: 700; }
+    .mini-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-top: 10px; }
+    .mini { min-height: 84px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(255,255,255,.12); }
+    .mini small { display: block; color: rgba(255,255,255,.64); font-size: .68rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .mini strong { display: block; margin-top: 7px; color: #fff; font-size: 1.25rem; line-height: 1; }
+    .mini span { display: block; margin-top: 5px; color: rgba(255,255,255,.72); font-size: .78rem; line-height: 1.3; font-weight: 700; }
+
+    .wizard-card { margin: 16px auto 0; border: 1px solid rgba(31,115,183,.16); border-radius: 28px; background: rgba(255,255,255,.9); box-shadow: var(--shadow); overflow: hidden; }
+    .wizard-top { padding: 18px 20px 16px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,251,255,.92)); }
+    .wizard-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .step-label { color: var(--navy); font-size: .8rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .step-name { color: var(--muted); font-size: .88rem; font-weight: 800; text-align: right; }
+    .progress-track { height: 9px; overflow: hidden; border-radius: 999px; background: #e8eef6; }
+    .progress-fill { width: 16.6667%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--blue)); transition: width 320ms ease; }
+    .step-dots { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .step-dot { min-height: 34px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted); font: inherit; font-size: .78rem; font-weight: 900; cursor: pointer; transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease; }
+    .step-dot:hover { transform: translateY(-1px); border-color: rgba(31,115,183,.42); }
+    .step-dot.active { border-color: transparent; background: linear-gradient(135deg, var(--navy), var(--blue)); color: #fff; }
+    .wizard-stage { position: relative; min-height: 530px; padding: clamp(18px,3vw,30px); overflow: hidden; }
+    .wizard-step { display: none; opacity: 0; transform: translateX(18px); }
+    .wizard-step.active { display: block; animation: stepIn 280ms ease both; }
+    .wizard-step.leaving-left, .wizard-step.leaving-right { display: block; position: absolute; inset: clamp(18px,3vw,30px); pointer-events: none; }
+    .wizard-step.leaving-left { animation: stepOutLeft 240ms ease both; }
+    .wizard-step.leaving-right { animation: stepOutRight 240ms ease both; }
+    @keyframes stepIn { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes stepOutLeft { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(-18px); } }
+    @keyframes stepOutRight { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(18px); } }
+
+    .section-head { display: grid; grid-template-columns: minmax(0,1fr) minmax(220px,.46fr); gap: 18px; align-items: end; margin-bottom: 18px; }
+    .section-head p, .lead { margin: 0; color: var(--muted); font-size: .98rem; line-height: 1.56; font-weight: 700; }
+    .section-head p { text-align: right; }
+    .split { display: grid; grid-template-columns: minmax(0,.86fr) minmax(0,1.14fr); gap: 14px; align-items: stretch; }
+    .verdict { min-height: 270px; display: grid; align-content: space-between; padding: 22px; border-radius: 24px; color: #fff; background: radial-gradient(circle at 100% 0%, rgba(255,255,255,.2), transparent 190px), linear-gradient(135deg, var(--green), #53a57a); overflow: hidden; }
+    .verdict small { color: rgba(255,255,255,.72); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .verdict strong { display: block; margin-top: 12px; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: .98; letter-spacing: -.055em; }
+    .verdict p { margin: 18px 0 0; color: rgba(255,255,255,.82); font-size: .98rem; line-height: 1.5; font-weight: 700; }
+    .card-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+    .card-grid.three { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    .tile, .metric, .issue-card, .direction-card, .price-card { border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(180deg,#fff,#f8fbff); box-shadow: 0 10px 24px rgba(7,27,56,.055); }
+    .tile { min-height: 132px; display: grid; align-content: space-between; padding: 16px; }
+    .tile.good { border-color: rgba(47,118,88,.22); background: linear-gradient(180deg,#fff,var(--green-soft)); }
+    .tile.warn { border-color: rgba(197,138,50,.26); background: linear-gradient(180deg,#fff,var(--gold-soft)); }
+    .tile small, .issue-card small, .direction-card small { color: var(--muted); font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .tile strong { display: block; margin-top: 8px; color: var(--navy); font-size: clamp(1.25rem,3vw,1.85rem); line-height: 1; letter-spacing: -.045em; }
+    .tile span, .metric span, .issue-card p, .direction-card p, .price-card p, .scope-list li { color: var(--muted); font-size: .95rem; line-height: 1.45; font-weight: 700; overflow-wrap: anywhere; }
+    .tile span { display: block; margin-top: 8px; }
+    .metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+    .metric { min-height: 118px; display: grid; align-content: space-between; padding: 15px; }
+    .metric strong { display: block; margin-top: 7px; color: var(--navy); font-size: 1.25rem; line-height: 1.12; overflow-wrap: anywhere; }
+    .note { margin-top: 14px; padding: 16px; border: 1px solid rgba(31,115,183,.16); border-radius: 18px; background: var(--blue-soft); color: var(--navy); font-size: .98rem; line-height: 1.5; font-weight: 750; }
+    .issue-card, .direction-card { min-height: 205px; display: grid; align-content: space-between; padding: 17px; position: relative; overflow: hidden; }
+    .issue-card::before, .direction-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--blue); }
+    .issue-card.warn::before { background: var(--gold); }
+    .issue-card.fix::before { background: var(--green); }
+    .issue-card.issue::before { background: var(--red); }
+    .direction-card::before { background: linear-gradient(90deg, var(--gold), var(--blue)); }
+    .issue-card h3, .direction-card h3 { margin: 12px 0 8px; font-size: 1.08rem; line-height: 1.15; letter-spacing: -.02em; }
+    .issue-card p, .direction-card p, .price-card p { margin: 0; }
+    .tag { justify-self: start; display: inline-flex; align-items: center; min-height: 30px; margin-top: 15px; padding: 7px 9px; border-radius: 999px; background: #f0f6fb; color: var(--navy); font-size: .72rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .price-layout { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); gap: 14px; align-items: stretch; }
+    .price-card { overflow: hidden; }
+    .price-top { padding: 20px; color: #fff; background: radial-gradient(circle at 90% 0%, rgba(255,255,255,.2), transparent 180px), linear-gradient(135deg, var(--navy), var(--blue)); }
+    .price-card.secondary .price-top { background: radial-gradient(circle at 90% 0%, rgba(255,255,255,.22), transparent 180px), linear-gradient(135deg, #7e5519, var(--gold)); }
+    .price-top small { color: rgba(255,255,255,.72); }
+    .price-top strong { display: block; margin-top: 8px; color: #fff; font-size: clamp(2rem,5vw,3.5rem); line-height: 1; letter-spacing: -.055em; }
+    .price-top p { margin-top: 12px; color: rgba(255,255,255,.82); }
+    .scope-list { list-style: none; display: grid; gap: 9px; margin: 0; padding: 18px; }
+    .scope-list li { display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 9px; align-items: start; }
+    .scope-list li::before { content: ""; width: 24px; aspect-ratio: 1; border-radius: 999px; border: 2px solid rgba(47,118,88,.2); background: var(--green-soft); box-shadow: inset 0 0 0 4px #fff; }
+    .scope-list li::after { content: ""; width: 8px; height: 4px; border-left: 2px solid var(--green); border-bottom: 2px solid var(--green); transform: translate(8px,7px) rotate(-45deg); grid-column: 1; grid-row: 1; }
+    .wizard-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 20px 20px; border-top: 1px solid var(--line); background: rgba(247,251,255,.74); }
+    .footer-note { color: var(--muted); font-size: .86rem; font-weight: 800; line-height: 1.35; }
+    .wizard-actions { display: flex; justify-content: flex-end; gap: 8px; flex: 0 0 auto; }
+    .final-strip { margin-top: 16px; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 20px; align-items: center; padding: clamp(20px,4vw,34px); border-radius: 28px; color: #fff; background: radial-gradient(circle at 10% 0%, rgba(143,240,177,.16), transparent 240px), linear-gradient(135deg, var(--navy), #0a2854 58%, #102d58); box-shadow: var(--shadow); }
     .final-strip h2 { color: #fff; }
-    .final-strip p { margin: 12px 0 0; max-width: 760px; color: rgba(255,255,255,.78); line-height: 1.55; font-weight: 740; }
+    .final-strip p { max-width: 760px; margin: 10px 0 0; color: rgba(255,255,255,.78); font-size: .98rem; line-height: 1.55; font-weight: 700; }
+    .stamp { width: 148px; aspect-ratio: 1; display: grid; place-items: center; border: 2px solid rgba(255,255,255,.35); border-radius: 999px; background: rgba(255,255,255,.08); color: #fff; text-align: center; font-size: .82rem; font-weight: 900; letter-spacing: .08em; line-height: 1.35; text-transform: uppercase; transform: rotate(-6deg); box-shadow: inset 0 0 0 9px rgba(255,255,255,.06); }
 
-    .stamp {
-      width: 180px;
-      aspect-ratio: 1;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      border: 2px solid rgba(255,255,255,.35);
-      color: #fff;
-      font-weight: 950;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transform: rotate(-8deg);
-      background: rgba(255,255,255,.08);
-      box-shadow: inset 0 0 0 10px rgba(255,255,255,.06);
-    }
-
-    .mobile-only-note { display: none; }
-
-    @media (max-width: 980px) {
-      .hero-inner, .executive-card, .proposal { grid-template-columns: 1fr; }
-      .findings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .quick-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 740px) {
-      .topbar { position: static; border-radius: 24px; align-items: flex-start; flex-direction: column; }
-      .nav-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
-      .button { width: 100%; padding-inline: 8px; }
-      .hero { border-radius: 28px; }
-      .hero-inner { padding: 22px 15px; }
-      .hero-dashboard { border-radius: 24px; }
-      .dash-grid, .summary-grid, .findings-grid { grid-template-columns: 1fr; }
-      .quick-nav { grid-template-columns: 1fr 1fr; }
-      .section { border-radius: 22px; padding: 15px; }
-      .section-head { align-items: start; flex-direction: column; }
+    @media (max-width: 920px) {
+      .hero-inner, .split, .price-layout, .section-head { grid-template-columns: 1fr; }
       .section-head p { text-align: left; }
-      .matrix { grid-template-columns: 1fr; }
-      .matrix .head:nth-child(1)::after { content: " / Why it matters / Recommended fix"; }
-      .matrix .head:nth-child(2), .matrix .head:nth-child(3) { display: none; }
-      .road-step { grid-template-columns: 46px minmax(0,1fr); }
-      .road-step::before { width: 46px; border-radius: 16px; }
-      .road-tag { grid-column: 2; justify-self: start; }
-      .final-strip { grid-template-columns: 1fr; border-radius: 28px; }
-      .stamp { width: 140px; justify-self: start; }
+      .card-grid.three, .metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .wizard-stage { min-height: 620px; }
     }
-
+    @media (max-width: 680px) {
+      .page-shell { padding-inline: 10px; }
+      .topbar { position: static; align-items: stretch; border-radius: 22px; flex-direction: column; }
+      .button { width: 100%; }
+      .hero, .hero-panel, .wizard-card, .final-strip { border-radius: 22px; }
+      .hero-inner { padding: 22px 16px; }
+      .wizard-meta { align-items: flex-start; flex-direction: column; }
+      .step-name { text-align: left; }
+      .step-dots { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .step-dot { width: 100%; justify-content: center; }
+      .wizard-stage { min-height: 760px; padding: 16px; }
+      .wizard-step.leaving-left, .wizard-step.leaving-right { inset: 16px; }
+      .card-grid, .card-grid.three, .metrics, .mini-grid { grid-template-columns: 1fr; }
+      .wizard-footer { align-items: stretch; flex-direction: column; }
+      .wizard-actions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+      .wizard-button { width: 100%; }
+      .final-strip { grid-template-columns: 1fr; }
+      .stamp { width: 128px; justify-self: start; }
+    }
     @media (max-width: 420px) {
-      .page-shell { padding-inline: 8px; }
-      .quick-nav { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(2.45rem, 17vw, 4.7rem); }
-      .status-card strong { font-size: 2.8rem; }
-      .price-top, .maintenance-card { padding: 18px; }
+      .brand-copy strong { font-size: .86rem; }
+      .brand-copy span { font-size: .68rem; }
+      .hero-pills span { width: 100%; }
+      .wizard-top, .wizard-footer { padding-inline: 14px; }
+      .wizard-stage { min-height: 880px; }
+      .step-dots { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
   </style>
 </head>
 <body>
   <main class="page-shell">
     <nav class="topbar" aria-label="Report navigation">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Back to DS Digital Designs sitemap">
         <span class="brand-badge">DS</span>
-        <span class="brand-copy">
-          <strong>Spring City Chamber Audit</strong>
-          <span>Premium digital report · DS Digital Designs</span>
-        </span>
+        <span class="brand-copy"><strong>Spring City Chamber Audit</strong><span>Wizard report · DS Digital Designs</span></span>
       </a>
-      <div class="nav-actions">
-        <a class="button" href="index.html">← Sitemap</a>
-        <a class="button primary" href="#proposal">View Estimate</a>
-      </div>
+      <a class="button" href="index.html">&larr; Back to Sitemap</a>
     </nav>
 
-    <section class="hero" id="top">
+    <section class="hero" aria-labelledby="report-title">
       <div class="hero-inner">
         <div>
           <p class="kicker"><span class="pulse"></span> Website audit · April 24, 2026</p>
-          <h1>A stronger website is already sitting underneath the current one.</h1>
-          <p class="hero-lead">The Spring City Chamber website is not broken. It is live, secure, reachable, and already has useful content. The opportunity is to turn that existing foundation into something cleaner, easier to update, easier to trust, and easier for visitors and local businesses to actually use.</p>
-          <div class="hero-pills" aria-label="Main report takeaways">
-            <span>Live homepage</span>
-            <span>Active SSL</span>
-            <span>No broken links found</span>
-            <span>Structure needs cleanup</span>
-            <span>Best path: focused improvement</span>
-          </div>
+          <h1 id="report-title">Spring City Chamber website audit report</h1>
+          <p class="hero-lead">The Spring City Chamber website is not broken. It is live, secure, reachable, and functional. The main opportunity is improving structure, presentation, organization, and the long-term update flow.</p>
+          <div class="hero-pills" aria-label="Main report takeaways"><span>Website reviewed: springcitychamber.org</span><span>Prepared by DS Digital Designs</span><span>Secure and reachable</span><span>Focused improvement recommended</span></div>
         </div>
-
-        <aside class="hero-dashboard" aria-label="Audit dashboard">
-          <div class="status-card">
-            <div>
-              <small>Overall Read</small>
-              <strong>Good foundation</strong>
-              <p>The site works. The next move is organization, presentation, and maintainability.</p>
-            </div>
-          </div>
-          <div class="dash-grid">
-            <div class="dash-mini"><small>Status</small><strong>200 OK</strong><span>Homepage reachable</span></div>
-            <div class="dash-mini"><small>Load</small><strong>0.971s</strong><span>Fast response</span></div>
-            <div class="dash-mini"><small>Links</small><strong>27</strong><span>0 broken found</span></div>
-            <div class="dash-mini"><small>Issue</small><strong>3 H1s</strong><span>Needs structure cleanup</span></div>
-          </div>
+        <aside class="hero-panel" aria-label="Audit highlights">
+          <div class="status-card"><div><small>Overall Read</small><strong>Good foundation</strong><p>The site works. The next move is cleaner organization, stronger visitor flow, and easier maintenance.</p></div></div>
+          <div class="mini-grid"><div class="mini"><small>Status</small><strong>200 OK</strong><span>Homepage reachable</span></div><div class="mini"><small>Load</small><strong>0.971s</strong><span>Fast response</span></div><div class="mini"><small>Links</small><strong>27</strong><span>0 broken found</span></div><div class="mini"><small>Estimate</small><strong>$500-$900</strong><span>Soft planning range</span></div></div>
         </aside>
       </div>
     </section>
 
-    <nav class="quick-nav" aria-label="Jump links">
-      <a href="#executive">Executive Summary</a>
-      <a href="#findings">Findings</a>
-      <a href="#impact">Impact Map</a>
-      <a href="#roadmap">Improvement Plan</a>
-      <a href="#proposal">Estimate</a>
-    </nav>
-
-    <section class="section" id="executive">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Executive Summary</p>
-          <h2>Not an emergency. A cleanup and growth opportunity.</h2>
-        </div>
-        <p>The audit shows a working website with real strengths. The weak point is not whether the site exists. The weak point is how clearly it organizes members, events, updates, and visitor paths.</p>
+    <section class="wizard-card" aria-label="Interactive audit report wizard">
+      <div class="wizard-top">
+        <div class="wizard-meta"><div class="step-label" id="stepLabel">Step 1 of 6</div><div class="step-name" id="stepName">Executive Summary</div></div>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="step-dots" role="tablist" aria-label="Report steps"><button class="step-dot active" type="button" role="tab" aria-selected="true" data-step="0">1. Summary</button><button class="step-dot" type="button" role="tab" aria-selected="false" data-step="1">2. Snapshot</button><button class="step-dot" type="button" role="tab" aria-selected="false" data-step="2">3. Working</button><button class="step-dot" type="button" role="tab" aria-selected="false" data-step="3">4. Improvements</button><button class="step-dot" type="button" role="tab" aria-selected="false" data-step="4">5. Direction</button><button class="step-dot" type="button" role="tab" aria-selected="false" data-step="5">6. Estimate</button></div>
       </div>
 
-      <div class="executive-card">
-        <article class="verdict">
-          <div>
-            <small>Client-facing verdict</small>
-            <strong>The site is functional, but under-presented.</strong>
-          </div>
-          <p>That means this project should be framed as a professional improvement project, not an emergency repair. The value is making the Chamber look more current, easier to browse, and easier to maintain.</p>
-        </article>
+      <div class="wizard-stage" id="wizardStage">
+        <section class="wizard-step active" data-title="Executive Summary" aria-labelledby="step-one-title">
+          <div class="section-head"><div><p class="eyebrow">Executive Summary</p><h2 id="step-one-title">Not an emergency. A cleanup and growth opportunity.</h2></div><p>The audit shows a working website with real strengths. The weak point is not whether the site exists. The weak point is how clearly it organizes members, events, updates, and visitor paths.</p></div>
+          <div class="split"><article class="verdict"><div><small>Client-facing verdict</small><strong>The site is functional, but under-presented.</strong></div><p>This should be framed as a professional improvement project, not an emergency repair. The value is making the Chamber look more current, easier to browse, and easier to maintain.</p></article><div class="card-grid"><article class="tile good"><small>Foundation</small><strong>Live</strong><span>The reviewed homepage returned a successful 200 OK response.</span></article><article class="tile good"><small>Security</small><strong>SSL active</strong><span>Visitors can access the site through a secure HTTPS connection.</span></article><article class="tile warn"><small>Cleanup</small><strong>3 H1s</strong><span>The homepage structure should be simplified to one clear main heading.</span></article><article class="tile"><small>Opportunity</small><strong>Better flow</strong><span>Members, events, announcements, and documents should be easier to scan and update.</span></article></div></div>
+          <div class="note">Plain-English message: the website already works, and that is exactly why this is a good time to clean it up before the content, events, and member updates become harder to manage.</div>
+        </section>
 
-        <div class="summary-grid">
-          <article class="summary-tile good"><small>Strength</small><strong>Secure</strong><span>SSL is active and the site can be reached through a secure connection.</span></article>
-          <article class="summary-tile good"><small>Strength</small><strong>Reachable</strong><span>The homepage returned a successful 200 OK response during the audit.</span></article>
-          <article class="summary-tile warn"><small>Cleanup</small><strong>Heading structure</strong><span>The homepage uses multiple H1 headings, which should be simplified.</span></article>
-          <article class="summary-tile purple"><small>Opportunity</small><strong>Better flow</strong><span>Members, events, announcements, and documents should be easier to scan and update.</span></article>
-        </div>
+        <section class="wizard-step" data-title="Audit Snapshot" aria-labelledby="step-two-title">
+          <div class="section-head"><div><p class="eyebrow">Audit Snapshot</p><h2 id="step-two-title">The core scan details in one clean view.</h2></div><p>These numbers show a stable baseline: the homepage loads, the site is secure, links are working, and the biggest issues are structural rather than catastrophic.</p></div>
+          <div class="metrics"><article class="metric"><small>Website reviewed</small><strong>springcitychamber.org</strong><span>https://www.springcitychamber.org/</span></article><article class="metric"><small>Audit date</small><strong>April 24, 2026</strong><span>Prepared by DS Digital Designs</span></article><article class="metric"><small>Homepage status</small><strong>200 OK</strong><span>Final URL loaded successfully</span></article><article class="metric"><small>Load time</small><strong>0.971 seconds</strong><span>Fast homepage response</span></article><article class="metric"><small>Page size</small><strong>481,998 bytes</strong><span>Content type: HTML</span></article><article class="metric"><small>Page title</small><strong>Home</strong><span>Meta description present</span></article><article class="metric"><small>Heading count</small><strong>3 H1s</strong><span>Main structure issue found</span></article><article class="metric"><small>Unique links</small><strong>27 total</strong><span>23 internal, 4 external</span></article><article class="metric"><small>Problem links</small><strong>0 found</strong><span>No broken links in the scan</span></article><article class="metric"><small>Images</small><strong>5 found</strong><span>0 missing alt text</span></article><article class="metric"><small>Contact signals</small><strong>4 emails</strong><span>15 phone matches, 4 social links</span></article><article class="metric"><small>Document links</small><strong>0 found</strong><span>No PDFs or document links found from homepage data</span></article><article class="metric"><small>Platform clues</small><strong>Wix</strong><span>Nameservers: Wix DNS</span></article><article class="metric"><small>Email MX records</small><strong>Google</strong><span>Google mail servers detected</span></article><article class="metric"><small>SSL issuer</small><strong>Let's Encrypt R12</strong><span>Certificate is active</span></article><article class="metric"><small>SSL valid until</small><strong>June 22, 2026</strong><span>Certificate subject: springcitychamber.org</span></article></div>
+        </section>
+
+        <section class="wizard-step" data-title="What Is Working" aria-labelledby="step-three-title">
+          <div class="section-head"><div><p class="eyebrow">What Is Working</p><h2 id="step-three-title">The Chamber already has a solid website foundation.</h2></div><p>The strongest sales angle is not panic. The scan confirms the site is live, secure, reachable, and already carrying important contact and social information.</p></div>
+          <div class="card-grid three"><article class="issue-card fix"><div><small>Strength</small><h3>Homepage loads successfully</h3><p>The homepage returned a successful status during the audit, which means the website is not dead, broken, or inaccessible.</p></div><span class="tag">200 OK</span></article><article class="issue-card fix"><div><small>Strength</small><h3>No broken links found</h3><p>The reviewed navigation links were working at the time of the scan. That is a strong usability baseline.</p></div><span class="tag">0 broken</span></article><article class="issue-card fix"><div><small>Strength</small><h3>Images include alt text</h3><p>The homepage had 5 images found and 0 missing alt text, which supports accessibility and content clarity.</p></div><span class="tag">Accessible signal</span></article><article class="issue-card fix"><div><small>Strength</small><h3>SSL is active</h3><p>The site uses a secure certificate issued by Let's Encrypt R12, valid until June 22, 2026.</p></div><span class="tag">Secure</span></article><article class="issue-card fix"><div><small>Strength</small><h3>Contact details are visible</h3><p>The scan found 4 emails, 15 phone matches, and 4 social links, confirming contact paths are present.</p></div><span class="tag">Reachable</span></article><article class="issue-card fix"><div><small>Strength</small><h3>Platform and mail are identifiable</h3><p>The site appears connected to Wix and email appears handled through Google-hosted mail servers.</p></div><span class="tag">Known setup</span></article></div>
+        </section>
+
+        <section class="wizard-step" data-title="Main Improvement Areas" aria-labelledby="step-four-title">
+          <div class="section-head"><div><p class="eyebrow">Main Improvement Areas</p><h2 id="step-four-title">The site works, but the experience can be clearer.</h2></div><p>The main opportunity is improving structure, presentation, organization, and long-term update flow so the site feels current and easier to manage.</p></div>
+          <div class="card-grid three"><article class="issue-card warn"><div><small>Structure</small><h3>Multiple H1 headings</h3><p>The homepage has three H1 headings. This is not an emergency, but a polished site should usually have one clear primary H1.</p></div><span class="tag">SEO cleanup</span></article><article class="issue-card warn"><div><small>Members</small><h3>Directory presentation can improve</h3><p>The member directory could likely be organized more clearly with business cards, categories, contact details, links, and social paths.</p></div><span class="tag">Member value</span></article><article class="issue-card warn"><div><small>Events</small><h3>Events need a cleaner scan path</h3><p>Events should be easier to browse with event name, date, time, location, description, and upcoming/archive organization.</p></div><span class="tag">Visitor flow</span></article><article class="issue-card issue"><div><small>Resources</small><h3>No document links found</h3><p>The homepage scan did not find PDFs, Word documents, spreadsheets, CSVs, or downloadable files. If forms are used, they need a clearer path.</p></div><span class="tag">Resource gap</span></article><article class="issue-card warn"><div><small>Workflow</small><h3>Updates appear manual</h3><p>Wix is workable, but pages, member listings, events, announcements, and small edits need a cleaner long-term update system.</p></div><span class="tag">Maintenance</span></article><article class="issue-card warn"><div><small>Presentation</small><h3>Freshness matters</h3><p>The site would benefit from clearer current announcements, upcoming events, member updates, and Chamber news.</p></div><span class="tag">Trust signal</span></article></div>
+        </section>
+
+        <section class="wizard-step" data-title="Recommended Direction" aria-labelledby="step-five-title">
+          <div class="section-head"><div><p class="eyebrow">Recommended Direction</p><h2 id="step-five-title">A focused improvement project is the right next step.</h2></div><p>The best direction is not a fear-based replacement. It is a practical restructure that keeps the working foundation and improves how members, events, updates, and announcements are presented.</p></div>
+          <div class="card-grid three"><article class="direction-card"><div><small>1</small><h3>Clean homepage structure</h3><p>Use one clear main heading and organize supporting sections with proper H2 and H3 hierarchy.</p></div><span class="tag">Foundation</span></article><article class="direction-card"><div><small>2</small><h3>Improve website freshness</h3><p>Add a clear area for current announcements, upcoming events, member updates, and Chamber news.</p></div><span class="tag">Freshness</span></article><article class="direction-card"><div><small>3</small><h3>Improve member directory presentation</h3><p>Create a cleaner directory with business cards, categories, contact details, website links, and social links where available.</p></div><span class="tag">Members</span></article><article class="direction-card"><div><small>4</small><h3>Improve event presentation</h3><p>Make events easy to scan with event name, date, time, location, description, and upcoming/archive organization.</p></div><span class="tag">Events</span></article><article class="direction-card"><div><small>5</small><h3>Improve update workflow</h3><p>Create a simpler long-term system for updating members, events, announcements, homepage content, and small edits.</p></div><span class="tag">Workflow</span></article><article class="direction-card"><div><small>6</small><h3>Add ongoing maintenance</h3><p>Offer monthly support so the website does not become outdated or hard to manage after the restructure.</p></div><span class="tag">Support</span></article></div>
+          <div class="note">Professional summary: the website is live, accessible, and functioning. The stronger opportunity is improving how it is organized and maintained.</div>
+        </section>
+
+        <section class="wizard-step" data-title="Soft Project Estimate" aria-labelledby="step-six-title">
+          <div class="section-head"><div><p class="eyebrow">Soft Project Estimate</p><h2 id="step-six-title">Simple range, clear scope, flexible final quote.</h2></div><p>This is a planning estimate only, not a locked final invoice. Final pricing depends on page count, member updates, event needs, content cleanup, and ongoing maintenance expectations.</p></div>
+          <div class="price-layout"><article class="price-card"><div class="price-top"><small>Website restructure / rebuild</small><strong>$500-$900</strong><p>Best fit for a focused improvement project that makes the current website cleaner, more organized, and easier to maintain.</p></div><ul class="scope-list"><li>Homepage structure cleanup</li><li>Content cleanup and layout restructuring</li><li>Member directory improvements</li><li>Event presentation improvements</li><li>General usability improvements</li><li>Basic mobile-friendly presentation improvements</li></ul></article><article class="price-card secondary"><div class="price-top"><small>Optional monthly maintenance</small><strong>$50-$150/mo</strong><p>Best fit if the Chamber wants someone to keep the site current after the main cleanup is complete.</p></div><ul class="scope-list"><li>Member updates</li><li>Event postings</li><li>Announcement updates</li><li>Homepage edits</li><li>Small content changes</li><li>General website upkeep</li></ul></article></div>
+        </section>
       </div>
+
+      <div class="wizard-footer"><div class="footer-note" id="footerNote">Use Next to walk through the report, or jump with the step pills above.</div><div class="wizard-actions"><button class="wizard-button" type="button" id="prevBtn">Previous</button><button class="wizard-button primary" type="button" id="nextBtn">Next</button></div></div>
     </section>
 
-    <section class="section" id="findings">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Audit Findings</p>
-          <h2>Clean wins, clear fixes, no drama.</h2>
-        </div>
-        <p>The scan found a mix of strengths and improvement points. This is exactly the kind of site that benefits from a focused polish pass.</p>
-      </div>
-
-      <div class="findings-grid">
-        <article class="finding good">
-          <div>
-            <span class="finding-icon">✓</span>
-            <h3>Homepage loads successfully</h3>
-            <p>The homepage returned a successful status and loaded during the scan. That is the basic foundation every project needs first.</p>
-          </div>
-          <div class="finding-foot"><span>Result</span><span class="impact">200 OK</span></div>
-        </article>
-
-        <article class="finding good">
-          <div>
-            <span class="finding-icon">🔒</span>
-            <h3>SSL is active</h3>
-            <p>The site is using an active SSL certificate, which helps visitors trust the site and access it securely.</p>
-          </div>
-          <div class="finding-foot"><span>Security</span><span class="impact">Active</span></div>
-        </article>
-
-        <article class="finding good">
-          <div>
-            <span class="finding-icon">🔗</span>
-            <h3>No broken links found</h3>
-            <p>The reviewed links were working at the time of the scan, which means the site is not falling apart at the navigation level.</p>
-          </div>
-          <div class="finding-foot"><span>Links</span><span class="impact">0 broken</span></div>
-        </article>
-
-        <article class="finding warn">
-          <div>
-            <span class="finding-icon">H1</span>
-            <h3>Multiple H1 headings</h3>
-            <p>The homepage has three H1 headings. That is not catastrophic, but it weakens the page structure and should be cleaned up.</p>
-          </div>
-          <div class="finding-foot"><span>SEO</span><span class="impact">Needs cleanup</span></div>
-        </article>
-
-        <article class="finding fix">
-          <div>
-            <span class="finding-icon">M</span>
-            <h3>Member directory can work harder</h3>
-            <p>The directory should feel like a polished local business hub, with clean cards, categories, contact details, and easy browsing.</p>
-          </div>
-          <div class="finding-foot"><span>UX</span><span class="impact">Upgrade</span></div>
-        </article>
-
-        <article class="finding fix">
-          <div>
-            <span class="finding-icon">E</span>
-            <h3>Events need a cleaner scan path</h3>
-            <p>Events should be easy to read fast: name, date, time, location, short description, and clear upcoming/archive organization.</p>
-          </div>
-          <div class="finding-foot"><span>Content</span><span class="impact">Organize</span></div>
-        </article>
-
-        <article class="finding issue">
-          <div>
-            <span class="finding-icon">D</span>
-            <h3>No document links found from homepage</h3>
-            <p>If the Chamber uses forms, sponsorship documents, event packets, or applications, those should be easier to locate.</p>
-          </div>
-          <div class="finding-foot"><span>Docs</span><span class="impact">Missing path</span></div>
-        </article>
-
-        <article class="finding fix">
-          <div>
-            <span class="finding-icon">W</span>
-            <h3>Wix is workable, but needs structure</h3>
-            <p>The site appears tied to Wix. Wix can be easy to maintain, but only if the content system is organized clearly.</p>
-          </div>
-          <div class="finding-foot"><span>Platform</span><span class="impact">Wix clue</span></div>
-        </article>
-
-        <article class="finding fix">
-          <div>
-            <span class="finding-icon">↻</span>
-            <h3>Long-term update flow matters most</h3>
-            <p>The biggest value is not a one-time visual cleanup. It is keeping members, events, announcements, and homepage content current.</p>
-          </div>
-          <div class="finding-foot"><span>System</span><span class="impact">Maintenance</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="impact">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Impact Map</p>
-          <h2>What each issue actually affects.</h2>
-        </div>
-        <p>This turns the audit from a list of problems into a plain-English reason for action.</p>
-      </div>
-
-      <div class="matrix" role="table" aria-label="Audit impact matrix">
-        <div class="head">Area</div><div class="head">Why it matters</div><div class="head">Recommended fix</div>
-        <div><strong>Homepage structure</strong></div><div><span>Visitors and search tools need one clear main page signal.</span></div><div><span>Use one H1, then organize supporting sections with H2 and H3 headings.</span></div>
-        <div><strong>Member directory</strong></div><div><span>The Chamber’s value is tied to making local businesses easier to find.</span></div><div><span>Use category filters, cards, contact details, website links, and social links.</span></div>
-        <div><strong>Events</strong></div><div><span>Community events need to be fast to scan, especially on mobile.</span></div><div><span>Create clean upcoming event cards and archive older events separately.</span></div>
-        <div><strong>Documents</strong></div><div><span>Forms and downloadable resources can get buried or missed.</span></div><div><span>Create a document/resource section if forms, packets, or applications are used.</span></div>
-        <div><strong>Update workflow</strong></div><div><span>A website loses trust when information looks old or hard to maintain.</span></div><div><span>Add an ongoing maintenance process for small updates and recurring content.</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="roadmap">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Improvement Plan</p>
-          <h2>The clean path forward.</h2>
-        </div>
-        <p>A focused restructure keeps what works and upgrades the parts that affect trust, clarity, and usability.</p>
-      </div>
-
-      <div class="roadmap">
-        <article class="road-step"><div><h3>Clean up the homepage structure</h3><p>One clear H1. Better section hierarchy. Cleaner first impression.</p></div><span class="road-tag">Foundation</span></article>
-        <article class="road-step"><div><h3>Create a current updates area</h3><p>Add a clear place for announcements, Chamber news, current events, and member updates.</p></div><span class="road-tag">Freshness</span></article>
-        <article class="road-step"><div><h3>Rebuild the member directory presentation</h3><p>Turn the directory into a polished local business browsing experience.</p></div><span class="road-tag">Members</span></article>
-        <article class="road-step"><div><h3>Reformat events for scanning</h3><p>Make events readable at a glance with clean cards, dates, times, locations, and descriptions.</p></div><span class="road-tag">Events</span></article>
-        <article class="road-step"><div><h3>Set up a long-term maintenance flow</h3><p>Give the Chamber a simple way to keep the site current without making every update feel like a project.</p></div><span class="road-tag">System</span></article>
-      </div>
-    </section>
-
-    <section class="section" id="proposal">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Soft Project Estimate</p>
-          <h2>Simple range. Clear scope.</h2>
-        </div>
-        <p>This is a planning estimate, not a locked invoice. Final pricing depends on page count, member data, event needs, and content cleanup.</p>
-      </div>
-
-      <div class="proposal">
-        <article class="price-card">
-          <div class="price-top">
-            <small>Website restructure / rebuild</small>
-            <strong>$500-$900</strong>
-            <p>Best fit for a focused improvement project that makes the existing site cleaner, more organized, and easier to maintain.</p>
-          </div>
-          <ul class="scope-list">
-            <li>Homepage structure cleanup</li>
-            <li>Content cleanup and layout restructuring</li>
-            <li>Member directory presentation improvements</li>
-            <li>Event presentation improvements</li>
-            <li>General usability and mobile-friendly cleanup</li>
-            <li>Cleaner visual flow for visitors, members, and local businesses</li>
-          </ul>
-        </article>
-
-        <article class="maintenance-card">
-          <div>
-            <small>Optional monthly maintenance</small>
-            <strong>$50-$150/mo</strong>
-            <p>Best fit if the Chamber wants someone to handle small updates so the website does not slowly become outdated again.</p>
-          </div>
-          <ul class="scope-list">
-            <li>Member updates</li>
-            <li>Event postings</li>
-            <li>Announcement updates</li>
-            <li>Homepage edits</li>
-            <li>Small content changes</li>
-            <li>General website upkeep</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="final-strip">
-      <div>
-        <p class="section-label" style="color: rgba(255,255,255,.68);">Final recommendation</p>
-        <h2>Do not replace blindly. Refine what already works.</h2>
-        <p>The smart move is a focused improvement project: keep the functional foundation, clean up structure, improve member and event presentation, and create a simple update process so the Chamber website stays useful long-term.</p>
-      </div>
-      <div class="stamp">Prepared by<br />DS Digital<br />Designs</div>
-    </section>
+    <section class="final-strip" aria-label="Final recommendation"><div><p class="eyebrow" style="color: rgba(255,255,255,.68);">Final recommendation</p><h2>Do not replace blindly. Refine what already works.</h2><p>The smart move is a focused improvement project: keep the functional foundation, clean up structure, improve member and event presentation, and create a simple update process so the Chamber website stays useful long-term.</p></div><div class="stamp">Prepared by<br />DS Digital<br />Designs</div></section>
   </main>
+
+  <script>
+    (function () {
+      const steps = Array.from(document.querySelectorAll(".wizard-step"));
+      const dots = Array.from(document.querySelectorAll(".step-dot"));
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const stepLabel = document.getElementById("stepLabel");
+      const stepName = document.getElementById("stepName");
+      const progressFill = document.getElementById("progressFill");
+      const footerNote = document.getElementById("footerNote");
+      let currentStep = 0;
+      let isAnimating = false;
+
+      function updateChrome(index) {
+        const total = steps.length;
+        const title = steps[index].dataset.title || "";
+        stepLabel.textContent = `Step ${index + 1} of ${total}`;
+        stepName.textContent = title;
+        progressFill.style.width = `${((index + 1) / total) * 100}%`;
+        prevBtn.disabled = index === 0;
+        nextBtn.textContent = index === total - 1 ? "Finish" : "Next";
+        footerNote.textContent = index === total - 1 ? "Final step: this estimate is a planning range and can be adjusted after scope is confirmed." : "Use Next to walk through the report, or jump with the step pills above.";
+        dots.forEach((dot, dotIndex) => {
+          const active = dotIndex === index;
+          dot.classList.toggle("active", active);
+          dot.setAttribute("aria-selected", active ? "true" : "false");
+        });
+      }
+
+      function goToStep(nextIndex) {
+        if (isAnimating || nextIndex === currentStep || nextIndex < 0 || nextIndex >= steps.length) return;
+        isAnimating = true;
+        const outgoing = steps[currentStep];
+        const incoming = steps[nextIndex];
+        const movingForward = nextIndex > currentStep;
+        outgoing.classList.remove("active");
+        outgoing.classList.add(movingForward ? "leaving-left" : "leaving-right");
+        incoming.classList.add("active");
+        currentStep = nextIndex;
+        updateChrome(currentStep);
+        window.setTimeout(() => {
+          outgoing.classList.remove("leaving-left", "leaving-right");
+          isAnimating = false;
+        }, 260);
+      }
+
+      prevBtn.addEventListener("click", () => goToStep(currentStep - 1));
+      nextBtn.addEventListener("click", () => {
+        if (currentStep === steps.length - 1) {
+          footerNote.textContent = "Report complete. The recommendation is a focused restructure plus optional monthly maintenance.";
+          return;
+        }
+        goToStep(currentStep + 1);
+      });
+      dots.forEach((dot) => dot.addEventListener("click", () => goToStep(Number(dot.dataset.step))));
+      updateChrome(currentStep);
+    })();
+  </script>
 </body>
 </html>
