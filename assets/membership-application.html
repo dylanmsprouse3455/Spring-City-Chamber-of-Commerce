@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring City Chamber of Commerce Membership Application</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+
+    :root {
+      --navy: #0b3a67;
+      --gold: #c99a40;
+      --ink: #1a2d3f;
+      --muted: #5e6f7d;
+      --line: #cfd8e3;
+      --soft: #f7f2e8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.35;
+    }
+
+    .page {
+      width: 100%;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 14px;
+      border-bottom: 3px solid var(--gold);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25pt;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin-top: 4px;
+      color: var(--gold);
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .contact {
+      min-width: 205px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--navy);
+      font-size: 9.5pt;
+      line-height: 1.35;
+    }
+
+    .section {
+      margin-top: 12px;
+      break-inside: avoid;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      padding: 7px 9px;
+      border-left: 5px solid var(--gold);
+      background: #f4f7fb;
+      color: var(--navy);
+      font-size: 12pt;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 14px;
+      row-gap: 8px;
+    }
+
+    .field {
+      min-height: 28px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--muted);
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .line {
+      height: 18px;
+      border-bottom: 1px solid #808b96;
+    }
+
+    .textarea {
+      min-height: 76px;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 20px,
+        #808b96 21px
+      );
+    }
+
+    .textarea.large {
+      min-height: 94px;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 18px;
+      padding-top: 2px;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 22px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .box {
+      width: 13px;
+      height: 13px;
+      border: 1.4px solid var(--navy);
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 0.7fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 8.5pt;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div>
+        <h1>Spring City Chamber of Commerce</h1>
+        <div class="subtitle">Membership Application</div>
+      </div>
+      <div class="contact">
+        <strong>Spring City Chamber of Commerce</strong><br />
+        390 Front Street<br />
+        Spring City, TN 37381<br />
+        423-682-0007<br />
+        info@springcitychamberofcommerce.com
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">1. Business / Organization Information</h2>
+      <div class="grid">
+        <div class="field full"><span class="label">Business or Organization Name</span><div class="line"></div></div>
+        <div class="field"><span class="label">Contact Person</span><div class="line"></div></div>
+        <div class="field"><span class="label">Business Category</span><div class="line"></div></div>
+        <div class="field full"><span class="label">Physical Address</span><div class="line"></div></div>
+        <div class="field full"><span class="label">Mailing Address</span><div class="line"></div></div>
+        <div class="field"><span class="label">Phone Number</span><div class="line"></div></div>
+        <div class="field"><span class="label">Email Address</span><div class="line"></div></div>
+        <div class="field"><span class="label">Website</span><div class="line"></div></div>
+        <div class="field"><span class="label">Social Media Links</span><div class="line"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">2. Membership Contact</h2>
+      <div class="grid">
+        <div class="field"><span class="label">Primary Contact Name</span><div class="line"></div></div>
+        <div class="field"><span class="label">Title / Role</span><div class="line"></div></div>
+        <div class="field"><span class="label">Phone</span><div class="line"></div></div>
+        <div class="field"><span class="label">Email</span><div class="line"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">3. Business Description</h2>
+      <span class="label">Short business description for the Chamber directory</span>
+      <div class="textarea"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">4. Directory Listing Information</h2>
+      <div class="grid">
+        <div class="field full"><span class="label">Preferred Business Name for Directory</span><div class="line"></div></div>
+        <div class="field"><span class="label">Public Phone</span><div class="line"></div></div>
+        <div class="field"><span class="label">Public Email</span><div class="line"></div></div>
+        <div class="field"><span class="label">Public Website</span><div class="line"></div></div>
+        <div class="field"><span class="label">Public Address</span><div class="line"></div></div>
+        <div class="field"><span class="label">Category / Industry</span><div class="line"></div></div>
+        <div class="field"><span class="label">Hours of Operation</span><div class="line"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">5. Membership Interest</h2>
+      <div class="checks">
+        <label class="check"><span class="box"></span> New Membership</label>
+        <label class="check"><span class="box"></span> Renewal</label>
+        <label class="check"><span class="box"></span> Update Existing Listing</label>
+        <label class="check"><span class="box"></span> Sponsorship Interest</label>
+        <label class="check"><span class="box"></span> Volunteer Interest</label>
+        <label class="check"><span class="box"></span> Event Participation Interest</label>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">6. Notes / Questions</h2>
+      <div class="textarea large"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">7. Signature</h2>
+      <div class="signature-grid">
+        <div class="field"><span class="label">Applicant Signature</span><div class="line"></div></div>
+        <div class="field"><span class="label">Printed Name</span><div class="line"></div></div>
+        <div class="field"><span class="label">Date</span><div class="line"></div></div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Please return the completed application to the Spring City Chamber of Commerce.
+    </div>
+  </main>
+</body>
+</html>
