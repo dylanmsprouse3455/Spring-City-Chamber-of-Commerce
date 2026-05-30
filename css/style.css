@@ -58,7 +58,21 @@ img {
   display: block;
 }
 
-.site-header {
+.app {
+  width: min(100%, 430px);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell {
+  width: min(100% - 28px, 402px);
+  margin: 0 auto;
+}
+
+.site-header,
+.header,
+.topbar {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -110,7 +124,8 @@ img {
   font-weight: 700;
 }
 
-.brand-text {
+.brand-text,
+.brand-copy {
   display: grid;
   line-height: 1.05;
 }
@@ -129,7 +144,8 @@ img {
   text-transform: uppercase;
 }
 
-.nav-toggle {
+.nav-toggle,
+.menu-toggle {
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -148,7 +164,8 @@ img {
   cursor: pointer;
 }
 
-.site-nav {
+.site-nav,
+.mobile-menu {
   position: absolute;
   top: 76px;
   left: 14px;
@@ -161,7 +178,8 @@ img {
   box-shadow: var(--shadow);
 }
 
-.nav-toggle:checked ~ .site-nav {
+.nav-toggle:checked ~ .site-nav,
+.menu-toggle:checked ~ .mobile-menu {
   display: grid;
   gap: 12px;
 }
@@ -208,7 +226,8 @@ img {
   background: rgba(198, 154, 57, 0.12);
 }
 
-.member-button {
+.member-button,
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -304,6 +323,14 @@ p {
   display: grid;
   gap: 8px;
   margin-bottom: 12px;
+}
+
+.section-title {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.9rem, 7vw, 3rem);
+  line-height: 1;
 }
 
 .section-head p {
@@ -423,6 +450,8 @@ p {
 
 @media (min-width: 460px) {
   .site-header,
+  .header,
+  .topbar,
   .footer,
   .bottom-contact {
     border-inline: 1px solid var(--line);
