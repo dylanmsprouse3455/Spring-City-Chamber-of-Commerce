@@ -1,30 +1,1356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- H1 - Spring City Scholarship Program Event Page -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
   <title>Spring City Scholarship Program | Spring City Chamber of Commerce</title>
-  <meta name="description" content="Spring City Scholarship Program page for the Spring City Chamber of Commerce." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta
+    name="description"
+    content="Spring City Scholarship Program event page with application deadlines, scholarships, sponsors, winners, and Chamber contact information."
+  />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
   <link rel="stylesheet" href="./css/style.css" />
+
+  <style>
+    :root {
+      --navy: #0b3a67;
+      --navy-dark: #062b4d;
+      --gold: #c99940;
+      --gold-dark: #9b6f21;
+      --cream: #fbf7f0;
+      --text: #17314a;
+      --muted: #637384;
+      --line: rgba(11, 58, 103, 0.14);
+      --soft-line: rgba(11, 58, 103, 0.08);
+      --shadow: 0 12px 30px rgba(11, 58, 103, 0.1);
+      --pink-soft: #fff3f5;
+      --pink: #b94668;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ece9e4;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .app {
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--cream);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shell {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: #ffffff;
+      padding: env(safe-area-inset-top, 0px) 0 10px;
+      font-size: 12px;
+    }
+
+    .topbar-inner {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1.25;
+    }
+
+    .topbar a {
+      color: #ffffff;
+    }
+
+    .sep {
+      opacity: 0.45;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      width: calc(100% - 28px);
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 18px rgba(11, 58, 103, 0.12);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      line-height: 0.92;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-copy p {
+      margin: 2px 0 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .menu-button {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .menu-button i {
+      font-size: 29px;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: calc(100% - 28px);
+      margin: 0 auto 12px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #f4f8fc;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .mobile-menu a.join {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .menu-toggle:checked ~ .header .mobile-menu {
+      display: grid;
+    }
+
+    .event-hero {
+      min-height: 430px;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(250, 247, 240, 0.96) 0%,
+          rgba(250, 247, 240, 0.82) 52%,
+          rgba(250, 247, 240, 0.16) 86%
+        ),
+        url("./assets/hero.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .hero-content {
+      padding: 24px 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .event-label {
+      width: fit-content;
+      margin: 0 0 10px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(201, 153, 64, 0.15);
+      color: var(--gold-dark);
+      border: 1px solid rgba(201, 153, 64, 0.28);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 300px;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 40px;
+      line-height: 0.94;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy p {
+      margin: 13px 0 0;
+      color: #2f4356;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 8px;
+      max-width: 330px;
+      margin-top: 16px;
+    }
+
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 42px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(11, 58, 103, 0.12);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(11, 58, 103, 0.06);
+    }
+
+    .meta-pill i {
+      color: var(--gold-dark);
+      width: 18px;
+      text-align: center;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 9px;
+      max-width: 330px;
+    }
+
+    .hero-actions .wide {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.08);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy);
+      border-color: rgba(11, 58, 103, 0.22);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(201, 153, 64, 0.62);
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .info-grid,
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .info-card,
+    .award-card {
+      padding: 14px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+    }
+
+    .info-card.full {
+      grid-column: 1 / -1;
+    }
+
+    .info-card i {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .info-card h4,
+    .award-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .info-card p {
+      margin: 7px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .award-card {
+      border-color: rgba(201, 153, 64, 0.22);
+    }
+
+    .award-card h4 {
+      font-size: 13px;
+      text-transform: none;
+    }
+
+    .award-card p {
+      margin: 8px 0 0;
+      color: var(--gold-dark);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .deadline-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .deadline-card {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+    }
+
+    .deadline-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink-soft);
+      color: var(--pink);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .deadline-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .deadline-card p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .photo-feature-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .photo-frame {
+      min-height: 150px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #edf3fa;
+      border: 1px solid var(--soft-line);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-feature-copy h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .photo-feature-copy p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .photo-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .return-box {
+      padding: 15px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+    }
+
+    .return-box h4 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .return-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 12px;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .return-row i {
+      color: var(--gold-dark);
+      width: 18px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 8px;
+    }
+
+    details.sponsor-group {
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+      overflow: hidden;
+    }
+
+    .sponsor-group summary {
+      min-height: 54px;
+      padding: 0 14px;
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .sponsor-group summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .sponsor-group summary i:first-child {
+      color: var(--gold-dark);
+      width: 20px;
+      text-align: center;
+    }
+
+    .sponsor-group .caret {
+      margin-left: auto;
+      transition: transform 0.18s ease;
+    }
+
+    .sponsor-group[open] .caret {
+      transform: rotate(180deg);
+    }
+
+    .sponsor-list {
+      padding: 0 14px 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .sponsor-item {
+      padding: 10px;
+      border-radius: 10px;
+      background: #f8fbff;
+      border: 1px solid rgba(212, 226, 245, 0.78);
+      color: #2f4356;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .sponsor-note {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .winner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .winner-card {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.06);
+    }
+
+    .winner-photo {
+      height: 190px;
+      background: #edf3fa;
+    }
+
+    .winner-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .winner-info {
+      padding: 12px;
+    }
+
+    .winner-info h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 0.96rem;
+      line-height: 1.15;
+    }
+
+    .winner-names {
+      display: grid;
+      gap: 3px;
+      margin-top: 8px;
+      color: var(--gold-dark);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .contact-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .contact-card p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .bottom-contact {
+      position: sticky;
+      bottom: 0;
+      z-index: 40;
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .bottom-contact-inner {
+      width: calc(100% - 16px);
+      min-height: 62px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 6px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    .contact-chip:last-child {
+      border-right: none;
+    }
+
+    .contact-chip i {
+      font-size: 18px;
+    }
+
+    .contact-chip strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 390px) {
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+      }
+
+      .brand-copy h1 {
+        font-size: 28px;
+      }
+
+      .brand-copy p {
+        font-size: 11px;
+      }
+
+      .hero-copy h2 {
+        font-size: 35px;
+      }
+
+      .hero-copy p {
+        font-size: 14px;
+      }
+
+      .award-grid {
+        gap: 8px;
+      }
+
+      .award-card h4 {
+        font-size: 12px;
+      }
+
+      .award-card p {
+        font-size: 14px;
+      }
+
+      .photo-feature-card {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-frame {
+        min-height: 210px;
+      }
+
+      .winner-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .winner-photo {
+        height: auto;
+      }
+
+      .contact-chip {
+        font-size: 10px;
+        gap: 5px;
+      }
+
+      .contact-chip i {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="./index.html" aria-label="Spring City Chamber of Commerce home"><img class="brand-mark" src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"><span class="brand-fallback" aria-hidden="true">SC</span><span class="brand-text"><span class="brand-name">Spring City Chamber</span><span class="brand-place">Tennessee</span></span></a><input class="nav-toggle" type="checkbox" id="nav-toggle"><label class="menu-button" for="nav-toggle" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></label><nav class="site-nav" aria-label="Primary navigation"><div class="nav-group"><span class="nav-label">Explore</span><div class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./membershipdirectory.html">Members</a>
-          <a href="./events-calendar.html">Events</a>
-          <a href="./visitsc.html">Visit Spring City</a>
-          <a href="./contact-5.html">Contact</a>
-        </div></div><a class="member-button" href="./membershipapplication.html"><i class="fa-solid fa-circle-plus"></i> Become a Member</a></nav></div></header>
-  <main class="page">
-    <section class="hero"><p class="eyebrow">Programs</p><h1>Spring City Scholarship Program</h1><p class="lead">This scholarship program page is being prepared. Application dates, requirements, and recipient information can be added here.</p><div class="actions"><a class="quick-link" href="./events-calendar.html"><i class="fa-solid fa-calendar-days"></i> Events Calendar</a><a class="quick-link" href="./communityevents.html"><i class="fa-solid fa-calendar-week"></i> Community Events</a><a class="quick-link" href="./contact-5.html"><i class="fa-solid fa-envelope"></i> Contact</a></div></section>
-    <section class="section"><div class="notice"><h2>Page Being Prepared</h2><p>This root-level page is in place so site navigation works on GitHub Pages. Replace this placeholder area with final text, photos, forms, listings, or event details when ready.</p></div></section>
-    <section class="section"><div class="section-head"><h2>Related Pages</h2><p>Use these links to keep moving through the Chamber site.</p></div><div class="card-grid"><article class="card"><i class="fa-solid fa-calendar-days"></i><h3>Events Calendar</h3><p>Continue to this related Chamber resource.</p><a class="card-link" href="./events-calendar.html">Open page</a></article><article class="card"><i class="fa-solid fa-calendar-week"></i><h3>Community Events</h3><p>Continue to this related Chamber resource.</p><a class="card-link" href="./communityevents.html">Open page</a></article><article class="card"><i class="fa-solid fa-envelope"></i><h3>Contact</h3><p>Continue to this related Chamber resource.</p><a class="card-link" href="./contact-5.html">Open page</a></article></div></section>
-  </main>
-  <footer class="footer"><div class="footer-inner"><p><strong>Spring City Chamber of Commerce</strong></p><div class="footer-links"><a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener">Visit Us</a><a href="mailto:info@springcitychamberofcommerce.com">Email Us</a><a href="tel:14236820007">Call Us</a></div></div></footer>
-<nav class="bottom-contact" aria-label="Quick contact"><a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i><span>Visit Us</span></a><a href="mailto:info@springcitychamberofcommerce.com"><i class="fa-solid fa-envelope"></i><span>Email Us</span></a><a href="tel:14236820007"><i class="fa-solid fa-phone"></i><span>Call Us</span></a></nav>
+  <div class="app">
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>390 Front Street, Spring City, TN 37381</span>
+        </div>
+
+        <div class="topbar-row">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@springcitychamberofcommerce.com">
+            info@springcitychamberofcommerce.com
+          </a>
+          <span class="sep">|</span>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:14236820007">423-682-0007</a>
+        </div>
+      </div>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <header class="header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
+          <div class="brand-mark">
+            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
+          </div>
+
+          <div class="brand-copy">
+            <h1>SPRING CITY</h1>
+            <p>CHAMBER OF COMMERCE</p>
+          </div>
+        </a>
+
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="./index.html">Home</a>
+        <a href="./membershipdirectory.html">Members</a>
+        <a href="./events-calendar.html">Events</a>
+        <a href="./visitsc.html">Visit Spring City</a>
+        <a href="./contact-5.html">Contact</a>
+        <a href="./membershipapplication.html" class="join">Become a Member</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="event-hero">
+        <div class="shell hero-content">
+          <div class="hero-copy">
+            <p class="event-label">Scholarship Event</p>
+            <h2>Spring City Scholarship Program</h2>
+            <p>
+              Pageants, ambassadors, scholarships, sponsors, and community support
+              for Spring City students and young leaders.
+            </p>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-pill">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>Saturday, March 8, 2025</span>
+            </div>
+
+            <div class="meta-pill">
+              <i class="fa-solid fa-clock"></i>
+              <span>10:00 AM</span>
+            </div>
+
+            <div class="meta-pill">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Spring City Methodist Church Gym</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#applications" class="btn btn-primary">
+              <i class="fa-solid fa-file-lines"></i>
+              Applications
+            </a>
+
+            <a href="#sponsors" class="btn btn-gold">
+              <i class="fa-solid fa-handshake"></i>
+              Sponsors
+            </a>
+
+            <a href="#winners" class="btn btn-light wide">
+              <i class="fa-solid fa-crown"></i>
+              2024 Winners
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Event Details</h3>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card">
+              <i class="fa-solid fa-dollar-sign"></i>
+              <h4>Application Fee</h4>
+              <p>$35.00</p>
+            </article>
+
+            <article class="info-card">
+              <i class="fa-solid fa-children"></i>
+              <h4>Schedule</h4>
+              <p>Birth through 5th Grade, 6th Grade through College.</p>
+            </article>
+
+            <article class="info-card full">
+              <i class="fa-solid fa-circle-info"></i>
+              <h4>Programs</h4>
+              <p>
+                Miss Spring City pageants are open to ladies birth through 21 years.
+                The Ambassador Program is for gentlemen in 8th through 12th grades,
+                graduates to age 21 years.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Deadlines</h3>
+          </div>
+
+          <div class="deadline-list">
+            <article class="deadline-card">
+              <div class="deadline-icon">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <div>
+                <h4>Miss Spring City Pageant</h4>
+                <p>Applications due 02-28-25 by 4:00 PM</p>
+              </div>
+            </article>
+
+            <article class="deadline-card">
+              <div class="deadline-icon">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div>
+                <h4>Ambassador Program</h4>
+                <p>Applications due 03-05-25 by 4:00 PM</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Scholarships</h3>
+          </div>
+
+          <div class="award-grid">
+            <article class="award-card"><h4>Young Miss Spring City</h4><p>$100</p></article>
+            <article class="award-card"><h4>Junior Miss Spring City</h4><p>$500</p></article>
+            <article class="award-card"><h4>Miss Spring City</h4><p>$1000 & tires</p></article>
+            <article class="award-card"><h4>Collegiate Miss Spring City</h4><p>$500 & tires</p></article>
+            <article class="award-card"><h4>S.C. Middle School Ambassador</h4><p>$100</p></article>
+            <article class="award-card"><h4>S.C. Junior Ambassador</h4><p>$500</p></article>
+            <article class="award-card"><h4>S.C. Ambassador</h4><p>$1000 & tires</p></article>
+            <article class="award-card"><h4>S.C. College Ambassador</h4><p>$500 & tires</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section photo-feature-section" id="applications">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Applications</h3>
+          </div>
+
+          <div class="photo-feature-card">
+            <div class="photo-frame">
+              <img src="./assets/pageant-medal.jpg" alt="Spring City Scholarship Program pageant medal" />
+            </div>
+
+            <div class="photo-feature-copy">
+              <p class="eyebrow">Applications Available</p>
+              <h3>Miss Spring City Pageants & Ambassador Program</h3>
+              <p>
+                Download or request the application forms, then return them to the
+                Chamber office, drop box, or mailing address.
+              </p>
+
+              <div class="photo-actions">
+                <a href="#" class="btn btn-primary">
+                  Miss Spring City Pageants
+                </a>
+
+                <a
+                  href="./assets/2025_spring_city_ambassador_program_application.pdf"
+                  class="btn btn-light"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Ambassador Application
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="return-box">
+            <h4>Return Application To</h4>
+
+            <div class="return-row">
+              <i class="fa-solid fa-building"></i>
+              <span>
+                Office: 390 Front Street inside the train depot,
+                Monday-Wednesday 8:00 AM - 4:00 PM, or use the outside drop box.
+              </span>
+            </div>
+
+            <div class="return-row">
+              <i class="fa-solid fa-envelope"></i>
+              <span>
+                Mail: P.O. Box 355, Spring City, TN 37381
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sponsors">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Sponsors</h3>
+          </div>
+
+          <div class="accordion">
+            <details class="sponsor-group" open>
+              <summary>
+                <i class="fa-solid fa-gem"></i>
+                <span>Diamond</span>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </summary>
+              <div class="sponsor-list">
+                <div class="sponsor-item">
+                  Nokian Tyres
+                  <span class="sponsor-note">
+                    Diamond Sponsor. A set of tires awarded to Senior & College Ambassadors,
+                    Miss Spring City, and College Miss Spring City.
+                  </span>
+                </div>
+              </div>
+            </details>
+
+            <details class="sponsor-group">
+              <summary><i class="fa-solid fa-star"></i><span>Platinum</span><i class="fa-solid fa-chevron-down caret"></i></summary>
+              <div class="sponsor-list">
+                <div class="sponsor-item">Rhea Medical Center</div>
+                <div class="sponsor-item">Hatfield Construction</div>
+                <div class="sponsor-item">Winstead's American Grill & King of Pizza</div>
+                <div class="sponsor-item">VEC Customers Share Foundation</div>
+                <div class="sponsor-item">MTNG Hometown Help</div>
+              </div>
+            </details>
+
+            <details class="sponsor-group">
+              <summary><i class="fa-solid fa-award"></i><span>Gold</span><i class="fa-solid fa-chevron-down caret"></i></summary>
+              <div class="sponsor-list">
+                <div class="sponsor-item">Cofer Garage</div>
+                <div class="sponsor-item">Pace Farms - Diana's Daughters Honey</div>
+                <div class="sponsor-item">Rhymer Construction</div>
+                <div class="sponsor-item">General Shale Brick</div>
+              </div>
+            </details>
+
+            <details class="sponsor-group">
+              <summary><i class="fa-solid fa-medal"></i><span>Silver</span><i class="fa-solid fa-chevron-down caret"></i></summary>
+              <div class="sponsor-list">
+                <div class="sponsor-item">Farmers Ins - J. Aaron Johnson</div>
+                <div class="sponsor-item">Gastown - Pizza Hut</div>
+                <div class="sponsor-item">Ally's Flowers</div>
+                <div class="sponsor-item">James & Michelle Ray</div>
+                <div class="sponsor-item">Village Flower & Gift Shoppe</div>
+                <div class="sponsor-item">Nick's Lakeside Grill</div>
+                <div class="sponsor-item">SouthEast Bank</div>
+                <div class="sponsor-item">Nationwide Ins - MaryBeth Norris</div>
+                <div class="sponsor-item">La Hacienda</div>
+                <div class="sponsor-item">Napa Auto Parts & Service Center - Spring City</div>
+                <div class="sponsor-item">John Murray Fishing</div>
+                <div class="sponsor-item">1st Farmers & Commercial Bank</div>
+                <div class="sponsor-item">Jason & Terri Kamer</div>
+                <div class="sponsor-item">Farm Bureau Spring City - Jeromy Hixson</div>
+                <div class="sponsor-item">Specialty Collision Center</div>
+                <div class="sponsor-item">Between the Vines</div>
+              </div>
+            </details>
+
+            <details class="sponsor-group">
+              <summary><i class="fa-solid fa-ribbon"></i><span>Bronze</span><i class="fa-solid fa-chevron-down caret"></i></summary>
+              <div class="sponsor-list">
+                <div class="sponsor-item">Rivermyst Homeowners Association</div>
+                <div class="sponsor-item">Firefly Pediatrics</div>
+                <div class="sponsor-item">David & Villa Edwards</div>
+                <div class="sponsor-item">County Commissioner District 2 Jim Reed</div>
+                <div class="sponsor-item">Bailey Reed Motors</div>
+                <div class="sponsor-item">Spring City Pharmacy</div>
+                <div class="sponsor-item">Tyler & Sierra Rains</div>
+                <div class="sponsor-item">County Commissioner District 3 Phillip Dunn</div>
+                <div class="sponsor-item">North Utility District of Rhea Co</div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section winners-section" id="winners">
+        <div class="shell">
+          <div class="section-title">
+            <h3>2024 Winners</h3>
+          </div>
+
+          <div class="winner-grid">
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/TRENTON ELLIS.png" alt="Middle School Ambassador Trenton Ellis" />
+              </div>
+              <div class="winner-info">
+                <h4>Middle School Ambassador</h4>
+                <div class="winner-names">
+                  <span>Trenton Ellis</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/CAIDEN GROCE.png" alt="Junior Ambassador Caiden Groce" />
+              </div>
+              <div class="winner-info">
+                <h4>Junior Ambassador</h4>
+                <div class="winner-names">
+                  <span>Caiden Groce</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/REINA MENDEZ.png" alt="Baby Miss Spring City Reina Mendez" />
+              </div>
+              <div class="winner-info">
+                <h4>Baby Miss Spring City</h4>
+                <div class="winner-names">
+                  <span>Reina Mendez</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/SARAH MENDEZ.png" alt="Wee Miss Spring City Sarah Mendez" />
+              </div>
+              <div class="winner-info">
+                <h4>Wee Miss Spring City</h4>
+                <div class="winner-names">
+                  <span>Sarah Mendez</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/ZOE REESE, GRACIE TIPTON KLOEE MAERKI, MARI CASTANEDA.png" alt="Young Miss, Junior Miss, Miss, and Collegiate Miss Spring City 2024" />
+              </div>
+              <div class="winner-info">
+                <h4>Young Miss, Junior Miss, Miss, & Collegiate Miss Spring City</h4>
+                <div class="winner-names">
+                  <span>Zoe Reese</span>
+                  <span>Gracie Tipton</span>
+                  <span>Kloee Maerki</span>
+                  <span>Mari Castaneda</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/Reese Harvey.png" alt="Tot Miss Spring City Reese Harvey" />
+              </div>
+              <div class="winner-info">
+                <h4>Tot Miss Spring City</h4>
+                <div class="winner-names">
+                  <span>Reese Harvey</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/Hanna Edwards.png" alt="Tiny Miss Spring City Hanna Edwards" />
+              </div>
+              <div class="winner-info">
+                <h4>Tiny Miss Spring City</h4>
+                <div class="winner-names">
+                  <span>Hanna Edwards</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/Addyson Williams.png" alt="Little Miss Spring City Addyson Williams" />
+              </div>
+              <div class="winner-info">
+                <h4>Little Miss Spring City</h4>
+                <div class="winner-names">
+                  <span>Addyson Williams</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/Ben Garrison.png" alt="Senior Ambassador Ben Garrison" />
+              </div>
+              <div class="winner-info">
+                <h4>Senior Ambassador</h4>
+                <div class="winner-names">
+                  <span>Ben Garrison</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="winner-card">
+              <div class="winner-photo">
+                <img src="./assets/Gauge Stryker.png" alt="Collegiate Ambassador Gauge Stryker" />
+              </div>
+              <div class="winner-info">
+                <h4>Collegiate Ambassador</h4>
+                <div class="winner-names">
+                  <span>Gauge Stryker</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="contact-card">
+            <h3>Questions or Sponsorship Interest?</h3>
+            <p>
+              Become a sponsor for this event to promote your business and support
+              local scholarship opportunities.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-light" href="tel:14236820007">
+                <i class="fa-solid fa-phone"></i>
+                Call
+              </a>
+
+              <a class="btn btn-light" href="mailto:info@springcitychamberofcommerce.com">
+                <i class="fa-solid fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="bottom-contact">
+      <div class="bottom-contact-inner">
+        <a
+          href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381" target="_blank" rel="noopener"
+          class="contact-chip"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>Visit Us</strong>
+            390 Front Street
+          </span>
+        </a>
+
+        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
+          <i class="fa-solid fa-envelope"></i>
+          <span>
+            <strong>Email Us</strong>
+            Email Chamber
+          </span>
+        </a>
+
+        <a href="tel:14236820007" class="contact-chip">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Call Us</strong>
+            423-682-0007
+          </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>

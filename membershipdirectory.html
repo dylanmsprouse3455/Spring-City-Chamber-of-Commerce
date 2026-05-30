@@ -1,29 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- H1 - Spring City Chamber Member Directory Page -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Membership Directory | Spring City Chamber of Commerce</title>
-  <meta name="description" content="Spring City Chamber member directory page." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Members | Spring City Chamber of Commerce</title>
+  <meta
+    name="description"
+    content="Find and support local Spring City Chamber members. Search the member directory, view business details, call members, get directions, and learn how to become a Chamber member."
+  />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Page CSS -->
   <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="./index.html" aria-label="Spring City Chamber of Commerce home"><img class="brand-mark" src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"><span class="brand-fallback" aria-hidden="true">SC</span><span class="brand-text"><span class="brand-name">Spring City Chamber</span><span class="brand-place">Tennessee</span></span></a><input class="nav-toggle" type="checkbox" id="nav-toggle"><label class="menu-button" for="nav-toggle" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></label><nav class="site-nav" aria-label="Primary navigation"><div class="nav-group"><span class="nav-label">Explore</span><div class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./membershipdirectory.html">Members</a>
-          <a href="./events-calendar.html">Events</a>
-          <a href="./visitsc.html">Visit Spring City</a>
-          <a href="./contact-5.html">Contact</a>
-        </div></div><a class="member-button" href="./membershipapplication.html"><i class="fa-solid fa-circle-plus"></i> Become a Member</a></nav></div></header>
-  <main class="page">
-    <section class="hero"><p class="eyebrow">Members</p><h1>Membership Directory</h1><p class="lead">This directory page is being prepared. Use the Chamber contact links below for current member information or membership questions.</p><div class="actions"><a class="quick-link" href="./membershipapplication.html"><i class="fa-solid fa-user-plus"></i> Become a Member</a><a class="quick-link" href="mailto:info@springcitychamberofcommerce.com"><i class="fa-solid fa-envelope"></i> Email the Chamber</a><a class="quick-link" href="tel:14236820007"><i class="fa-solid fa-phone"></i> Call 423-682-0007</a></div></section>
-    <section class="section"><div class="notice"><h2>Directory Coming Soon</h2><p>Member listings, categories, phone numbers, websites, and business descriptions can be added here when the final directory content is ready.</p></div></section>
-  </main>
-  <footer class="footer"><div class="footer-inner"><p><strong>Spring City Chamber of Commerce</strong></p><div class="footer-links"><a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener">Visit Us</a><a href="mailto:info@springcitychamberofcommerce.com">Email Us</a><a href="tel:14236820007">Call Us</a></div></div></footer>
-  <nav class="bottom-contact" aria-label="Quick contact"><a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i><span>Visit Us</span></a><a href="mailto:info@springcitychamberofcommerce.com"><i class="fa-solid fa-envelope"></i><span>Email Us</span></a><a href="tel:14236820007"><i class="fa-solid fa-phone"></i><span>Call Us</span></a></nav>
+  <div class="app">
+
+    <!-- B1 - TOP CONTACT BAR -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>390 Front Street, Spring City, TN 37381</span>
+        </div>
+
+        <div class="topbar-row">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@springcitychamberofcommerce.com">
+            info@springcitychamberofcommerce.com
+          </a>
+
+          <span class="sep">|</span>
+
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:14236820007">423-682-0007</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- B2 - MOBILE MENU TOGGLE -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <!-- B3 - HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
+          <div class="brand-mark">
+            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
+          </div>
+
+          <div class="brand-copy">
+            <h1>SPRING CITY</h1>
+            <p>CHAMBER OF COMMERCE</p>
+          </div>
+        </a>
+
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="./index.html">Home</a>
+        <a href="./membershipdirectory.html">Member Directory</a>
+        <a href="./membershipapplication.html" class="join">Become a Member</a>
+        <a href="./about-1.html">Member Spotlight</a>
+        <a href="./events-calendar.html">Events</a>
+        <a href="./contact-5.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- C1 - MEMBERS HERO -->
+      <section class="members-hero">
+        <div class="shell hero-content">
+          <div class="hero-copy">
+            <h2>Find and support local Chamber members.</h2>
+
+            <p>
+              Browse local businesses, connect with services, and learn how Chamber
+              membership helps strengthen the Spring City community.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#directory" class="btn btn-primary">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Directory</span>
+            </a>
+
+            <a href="./membershipapplication.html" class="btn btn-gold">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Become a Member</span>
+            </a>
+
+            <a href="./about-1.html" class="btn btn-light wide">
+              <i class="fa-regular fa-star"></i>
+              <span>Member Spotlight</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- D1 - SEARCH / FILTER PANEL -->
+      <section class="search-panel-wrap" aria-label="Member search and filter controls">
+        <div class="shell">
+          <div class="search-panel">
+
+            <label class="search-box" for="member-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                id="member-search"
+                type="search"
+                placeholder="Search members"
+                autocomplete="off"
+              />
+            </label>
+
+            <div class="filter-row" aria-label="Member category filters">
+              <button class="filter-chip active" type="button" data-filter="all">All</button>
+              <button class="filter-chip" type="button" data-filter="business">Business</button>
+              <button class="filter-chip" type="button" data-filter="dining">Dining</button>
+              <button class="filter-chip" type="button" data-filter="health">Health</button>
+              <button class="filter-chip" type="button" data-filter="services">Services</button>
+            </div>
+
+            <button class="sort-row" type="button" id="sort-toggle" aria-label="Sort member directory">
+              <i class="fa-solid fa-arrow-down-a-z"></i>
+              <span id="sort-label">Sort: A-Z</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- E1 - MEMBER DIRECTORY -->
+      <section class="section" id="directory">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Member Directory</h3>
+          </div>
+
+          <!-- E2 - DIRECTORY STATUS -->
+          <div class="directory-status" id="directory-status">
+            <span id="member-count">Loading members...</span>
+          </div>
+
+          <!-- E3 - MEMBER LIST GENERATED BY JS -->
+          <div class="member-list" id="member-list" aria-live="polite">
+            <!-- Business cards load here from ./assets/members.js -->
+          </div>
+
+          <!-- E4 - EMPTY STATE -->
+          <div class="empty-state" id="empty-state" hidden>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h4>No members found</h4>
+            <p>Try a different search term or choose another category.</p>
+          </div>
+
+          <!-- F1 - BECOME A MEMBER CTA -->
+          <section class="member-cta">
+            <div class="cta-mark">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <div class="cta-copy">
+              <h4>Grow with the Chamber</h4>
+              <p>Your membership helps build a stronger business community in Spring City.</p>
+
+              <a href="./membershipapplication.html" class="btn btn-gold">
+                Become a Member
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- G1 - STICKY CONTACT FOOTER -->
+    <div class="bottom-contact">
+      <div class="bottom-contact-inner">
+
+        <a
+          href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381" target="_blank" rel="noopener"
+          class="contact-chip"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>Visit Us</strong>
+            390 Front Street
+          </span>
+        </a>
+
+        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
+          <i class="fa-solid fa-envelope"></i>
+          <span>
+            <strong>Email Us</strong>
+            Email Chamber
+          </span>
+        </a>
+
+        <a href="tel:14236820007" class="contact-chip">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Call Us</strong>
+            423-682-0007
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Member data + rendering logic lives here -->
+  <script src="./assets/members.js"></script>
 </body>
 </html>

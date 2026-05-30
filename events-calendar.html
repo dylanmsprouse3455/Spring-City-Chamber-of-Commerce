@@ -1,29 +1,1132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- H1 - Spring City Chamber Events Hub -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events Calendar | Spring City Chamber of Commerce</title>
-  <meta name="description" content="Spring City Chamber events calendar." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Events | Spring City Chamber of Commerce</title>
+  <meta
+    name="description"
+    content="Spring City Chamber of Commerce events hub for scholarship programs, festivals, community events, golf classic, summer nights, and holiday events."
+  />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
   <link rel="stylesheet" href="./css/style.css" />
+
+  <style>
+    :root {
+      --navy: #0b3a67;
+      --navy-dark: #062b4d;
+      --blue: #1d72c9;
+      --gold: #c99940;
+      --gold-dark: #9b6f21;
+      --cream: #fbf7f0;
+      --paper: #ffffff;
+      --soft: #f4f8fc;
+      --text: #17314a;
+      --muted: #637384;
+      --line: rgba(11, 58, 103, 0.14);
+      --soft-line: rgba(11, 58, 103, 0.08);
+      --shadow: 0 12px 30px rgba(11, 58, 103, 0.1);
+      --pink-soft: #fff3f5;
+      --pink: #b94668;
+      --green-soft: #eef8f2;
+      --green: #2f6b4f;
+      --orange-soft: #fff4e9;
+      --orange: #b45b20;
+      --purple-soft: #f5efff;
+      --purple: #7351c7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ece9e4;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .app {
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--cream);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shell {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: #ffffff;
+      padding: env(safe-area-inset-top, 0px) 0 10px;
+      font-size: 12px;
+    }
+
+    .topbar-inner {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1.25;
+    }
+
+    .topbar a {
+      color: #ffffff;
+    }
+
+    .sep {
+      opacity: 0.45;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      width: calc(100% - 28px);
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 18px rgba(11, 58, 103, 0.12);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      line-height: 0.92;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-copy p {
+      margin: 2px 0 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .menu-button {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .menu-button i {
+      font-size: 29px;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: calc(100% - 28px);
+      margin: 0 auto 12px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #f4f8fc;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .mobile-menu a.join {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .menu-toggle:checked ~ .header .mobile-menu {
+      display: grid;
+    }
+
+    .events-hero {
+      min-height: 390px;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(250, 247, 240, 0.97) 0%,
+          rgba(250, 247, 240, 0.86) 52%,
+          rgba(250, 247, 240, 0.18) 88%
+        ),
+        url("./assets/hero.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .hero-content {
+      padding: 24px 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .event-label {
+      width: fit-content;
+      margin: 0 0 10px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(201, 153, 64, 0.15);
+      color: var(--gold-dark);
+      border: 1px solid rgba(201, 153, 64, 0.28);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 305px;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 41px;
+      line-height: 0.94;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy p {
+      margin: 13px 0 0;
+      color: #2f4356;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      max-width: 330px;
+    }
+
+    .hero-actions .wide {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.08);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy);
+      border-color: rgba(11, 58, 103, 0.22);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(201, 153, 64, 0.62);
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .quick-card {
+      min-height: 92px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px 8px;
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .quick-card i {
+      font-size: 22px;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
+    }
+
+    .featured-event {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(201, 153, 64, 0.22);
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+    }
+
+    .featured-image {
+      height: 210px;
+      background: #edf3fa;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-body {
+      padding: 15px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      min-height: 26px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(201, 153, 64, 0.14);
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .featured-body h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .featured-body p {
+      margin: 9px 0 0;
+      color: #2f4356;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .event-meta-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .event-meta {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .event-meta i {
+      color: var(--gold-dark);
+      width: 17px;
+      text-align: center;
+      margin-top: 1px;
+    }
+
+    .featured-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .event-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      min-height: 142px;
+    }
+
+    .event-thumb {
+      background: var(--soft);
+      min-height: 142px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 28px;
+      border-right: 1px solid var(--line);
+    }
+
+    .event-thumb.scholarship {
+      background: var(--pink-soft);
+      color: var(--pink);
+    }
+
+    .event-thumb.golf {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .event-thumb.summer {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .event-thumb.banquet {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .event-thumb.fall {
+      background: #fff8e8;
+      color: var(--gold-dark);
+    }
+
+    .event-thumb.christmas {
+      background: #edf8f2;
+      color: #2f6b4f;
+    }
+
+    .event-thumb.community {
+      background: #eaf4ff;
+      color: var(--blue);
+    }
+
+    .event-card-body {
+      padding: 13px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .event-card-body h4 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .event-card-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+
+    .event-date {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .event-link {
+      width: fit-content;
+      margin-top: 2px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .calendar-note {
+      padding: 15px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+    }
+
+    .calendar-note h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .calendar-note p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .calendar-note .btn {
+      width: 100%;
+      margin-top: 13px;
+    }
+
+    .contact-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .contact-card p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .bottom-contact {
+      position: sticky;
+      bottom: 0;
+      z-index: 40;
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .bottom-contact-inner {
+      width: calc(100% - 16px);
+      min-height: 62px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 6px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    .contact-chip:last-child {
+      border-right: none;
+    }
+
+    .contact-chip i {
+      font-size: 18px;
+    }
+
+    .contact-chip strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 390px) {
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+      }
+
+      .brand-copy h1 {
+        font-size: 28px;
+      }
+
+      .brand-copy p {
+        font-size: 11px;
+      }
+
+      .hero-copy h2 {
+        font-size: 35px;
+      }
+
+      .hero-copy p {
+        font-size: 14px;
+      }
+
+      .quick-card {
+        min-height: 84px;
+        font-size: 11px;
+      }
+
+      .event-card {
+        grid-template-columns: 78px 1fr;
+      }
+
+      .event-thumb {
+        min-height: 138px;
+      }
+
+      .event-card-body h4 {
+        font-size: 21px;
+      }
+
+      .contact-chip {
+        font-size: 10px;
+        gap: 5px;
+      }
+
+      .contact-chip i {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="./index.html" aria-label="Spring City Chamber of Commerce home"><img class="brand-mark" src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"><span class="brand-fallback" aria-hidden="true">SC</span><span class="brand-text"><span class="brand-name">Spring City Chamber</span><span class="brand-place">Tennessee</span></span></a><input class="nav-toggle" type="checkbox" id="nav-toggle"><label class="menu-button" for="nav-toggle" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></label><nav class="site-nav" aria-label="Primary navigation"><div class="nav-group"><span class="nav-label">Explore</span><div class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./membershipdirectory.html">Members</a>
-          <a href="./events-calendar.html">Events</a>
-          <a href="./visitsc.html">Visit Spring City</a>
-          <a href="./contact-5.html">Contact</a>
-        </div></div><a class="member-button" href="./membershipapplication.html"><i class="fa-solid fa-circle-plus"></i> Become a Member</a></nav></div></header>
-  <main class="page">
-    <section class="hero"><p class="eyebrow">Events</p><h1>Events Calendar</h1><p class="lead">This calendar page is being prepared. Event pages are available below while the full calendar content is finalized.</p><div class="actions"><a class="quick-link" href="./communityevents.html"><i class="fa-solid fa-calendar-week"></i> Community Events</a><a class="quick-link" href="./golfclassic.html"><i class="fa-solid fa-golf-ball-tee"></i> Golf Classic</a><a class="quick-link" href="./christmasatthedepot.html"><i class="fa-solid fa-train"></i> Christmas at the Depot</a></div></section>
-    <section class="section"><div class="card-grid"><article class="card"><i class="fa-solid fa-award"></i><h3>Scholarship Program</h3><p>Student scholarship information and updates.</p><a class="card-link" href="./springcityscholarshipprogram.html">Open page</a></article><article class="card"><i class="fa-solid fa-music"></i><h3>Summer Nights</h3><p>Seasonal summer community event details.</p><a class="card-link" href="./springcitysummernights.html">Open page</a></article><article class="card"><i class="fa-solid fa-leaf"></i><h3>Autumn Festival</h3><p>Fall festival information and vendor updates.</p><a class="card-link" href="./autumnfestival.html">Open page</a></article></div></section>
-  </main>
-  <footer class="footer"><div class="footer-inner"><p><strong>Spring City Chamber of Commerce</strong></p><div class="footer-links"><a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener">Visit Us</a><a href="mailto:info@springcitychamberofcommerce.com">Email Us</a><a href="tel:14236820007">Call Us</a></div></div></footer>
-  <nav class="bottom-contact" aria-label="Quick contact"><a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i><span>Visit Us</span></a><a href="mailto:info@springcitychamberofcommerce.com"><i class="fa-solid fa-envelope"></i><span>Email Us</span></a><a href="tel:14236820007"><i class="fa-solid fa-phone"></i><span>Call Us</span></a></nav>
+  <div class="app">
+
+    <!-- TOP CONTACT BAR -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>390 Front Street, Spring City, TN 37381</span>
+        </div>
+
+        <div class="topbar-row">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@springcitychamberofcommerce.com">
+            info@springcitychamberofcommerce.com
+          </a>
+          <span class="sep">|</span>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:14236820007">423-682-0007</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU TOGGLE -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
+          <div class="brand-mark">
+            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
+          </div>
+
+          <div class="brand-copy">
+            <h1>SPRING CITY</h1>
+            <p>CHAMBER OF COMMERCE</p>
+          </div>
+        </a>
+
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="./index.html">Home</a>
+        <a href="./membershipdirectory.html">Members</a>
+        <a href="./events-calendar.html">Events</a>
+        <a href="./visitsc.html">Visit Spring City</a>
+        <a href="./contact-5.html">Contact</a>
+        <a href="./membershipapplication.html" class="join">Become a Member</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="events-hero">
+        <div class="shell hero-content">
+          <div class="hero-copy">
+            <p class="event-label">Community Calendar</p>
+            <h2>Events that bring Spring City together.</h2>
+            <p>
+              Find Chamber programs, annual festivals, family-friendly nights,
+              fundraisers, pageants, and community gatherings.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#featured" class="btn btn-primary">
+              <i class="fa-solid fa-star"></i>
+              Featured
+            </a>
+
+            <a href="#events" class="btn btn-gold">
+              <i class="fa-solid fa-calendar-days"></i>
+              All Events
+            </a>
+
+            <a href="./contact-5.html" class="btn btn-light wide">
+              <i class="fa-solid fa-envelope"></i>
+              Ask the Chamber
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK ACCESS -->
+      <section class="section">
+        <div class="shell">
+          <div class="quick-grid">
+            <a class="quick-card" href="./springcityscholarshipprogram.html">
+              <span>
+                <i class="fa-solid fa-crown"></i><br />
+                Scholarships
+              </span>
+            </a>
+
+            <a class="quick-card" href="./autumnfestival.html">
+              <span>
+                <i class="fa-solid fa-leaf"></i><br />
+                Festivals
+              </span>
+            </a>
+
+            <a class="quick-card" href="./christmasatthedepot.html">
+              <span>
+                <i class="fa-solid fa-tree"></i><br />
+                Holiday
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED EVENT -->
+      <section class="section" id="featured">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Featured Event</h3>
+          </div>
+
+          <article class="featured-event">
+            <div class="featured-image">
+              <img src="./assets/ZOE REESE, GRACIE TIPTON KLOEE MAERKI, MARI CASTANEDA.png" alt="Spring City Scholarship Program winners" />
+            </div>
+
+            <div class="featured-body">
+              <div class="tag-row">
+                <span class="tag">
+                  <i class="fa-solid fa-crown"></i>
+                  Scholarship
+                </span>
+                <span class="tag">
+                  <i class="fa-solid fa-users"></i>
+                  Community
+                </span>
+              </div>
+
+              <h3>Spring City Scholarship Program</h3>
+
+              <p>
+                Pageants, ambassadors, scholarships, sponsors, and community support
+                for Spring City students and young leaders.
+              </p>
+
+              <div class="event-meta-list">
+                <div class="event-meta">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span>Saturday, March 8, 2025</span>
+                </div>
+
+                <div class="event-meta">
+                  <i class="fa-solid fa-clock"></i>
+                  <span>10:00 AM</span>
+                </div>
+
+                <div class="event-meta">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Spring City Methodist Church Gym</span>
+                </div>
+              </div>
+
+              <div class="featured-actions">
+                <a href="./springcityscholarshipprogram.html" class="btn btn-primary">
+                  View Event
+                </a>
+
+                <a href="./assets/2025_spring_city_ambassador_program_application.pdf" class="btn btn-light" target="_blank" rel="noopener">
+                  Application
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EVENT LIST -->
+      <section class="section" id="events">
+        <div class="shell">
+          <div class="section-title">
+            <h3>All Events</h3>
+          </div>
+
+          <div class="event-list">
+
+            <article class="event-card">
+              <div class="event-thumb scholarship">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  March 8, 2025
+                </span>
+                <h4>Spring City Scholarship Program</h4>
+                <p>Pageants, ambassador program, scholarships, sponsors, and 2024 winners.</p>
+                <a class="event-link" href="./springcityscholarshipprogram.html">Open Event →</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-thumb golf">
+                <i class="fa-solid fa-golf-ball-tee"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  April 9, 2025
+                </span>
+                <h4>Annual Golf Classic</h4>
+                <p>Scramblin’ for Scholarships golf fundraiser with teams, prizes, sponsors, and lunch.</p>
+                <a class="event-link" href="./golfclassic.html">Open Event →</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-thumb summer">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  May to August
+                </span>
+                <h4>Spring City Summer Nights</h4>
+                <p>Food trucks, vendors, cruise-in, live music, and free family-friendly movies.</p>
+                <a class="event-link" href="./springcitysummernights.html">Open Event →</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-thumb banquet">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  September 9
+                </span>
+                <h4>Membership Banquet</h4>
+                <p>Annual membership dinner, installation of officers, awards, and silent auction support.</p>
+                <a class="event-link" href="./membershipbanquet.html">Open Event →</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-thumb fall">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  September 27
+                </span>
+                <h4>Autumn Festival</h4>
+                <p>Pumpkin patch, vendors, chili cook-off, contests, pageant, concerts, and family activities.</p>
+                <a class="event-link" href="./autumnfestival.html">Open Event →</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-thumb christmas">
+                <i class="fa-solid fa-tree"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  Holiday Season
+                </span>
+                <h4>Christmas at the Depot</h4>
+                <p>Christmas festival, parade, pageant, vendors, food trucks, entertainment, and sponsors.</p>
+                <a class="event-link" href="./christmasatthedepot.html">Open Event →</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-thumb community">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+
+              <div class="event-card-body">
+                <span class="event-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  Community Events
+                </span>
+                <h4>Other Community Events</h4>
+                <p>Partner events like Shake the Lake, fireworks, vendors, food, music, and local celebrations.</p>
+                <a class="event-link" href="./communityevents.html">Open Events →</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CALENDAR NOTE -->
+      <section class="section">
+        <div class="shell">
+          <div class="calendar-note">
+            <h3>Need the full calendar?</h3>
+            <p>
+              This page gives visitors the important event paths first. A full calendar
+              can be added later once the Chamber has current dates and event listings ready.
+            </p>
+
+            <a href="./contact-5.html" class="btn btn-gold">
+              Contact the Chamber
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT CTA -->
+      <section class="section">
+        <div class="shell">
+          <div class="contact-card">
+            <h3>Have an event question?</h3>
+            <p>
+              Reach out to the Chamber for event details, vendor questions,
+              sponsorship interest, or community event information.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-light" href="tel:14236820007">
+                <i class="fa-solid fa-phone"></i>
+                Call
+              </a>
+
+              <a class="btn btn-light" href="mailto:info@springcitychamberofcommerce.com">
+                <i class="fa-solid fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- STICKY CONTACT FOOTER -->
+    <div class="bottom-contact">
+      <div class="bottom-contact-inner">
+        <a
+          href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381" target="_blank" rel="noopener"
+          class="contact-chip"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>Visit Us</strong>
+            390 Front Street
+          </span>
+        </a>
+
+        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
+          <i class="fa-solid fa-envelope"></i>
+          <span>
+            <strong>Email Us</strong>
+            Email Chamber
+          </span>
+        </a>
+
+        <a href="tel:14236820007" class="contact-chip">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Call Us</strong>
+            423-682-0007
+          </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
