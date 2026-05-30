@@ -1,379 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- H1 - Spring City Chamber Mobile Homepage -->
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spring City Chamber of Commerce</title>
-  <meta
-    name="description"
-    content="Spring City Chamber of Commerce - local business, community events, visitor information, and Chamber resources."
-  />
-
-  <!-- Fonts + Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="./assets/A1.css" />
+  <meta name="description" content="Spring City Chamber of Commerce resources for members, visitors, events, and community information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
-
 <body>
-  <div class="app">
-
-    <!-- B1 - TOP CONTACT BAR -->
-    <div class="topbar">
-      <div class="topbar-inner">
-        <div class="topbar-row">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>245 Church Street, Spring City, TN 37381</span>
-        </div>
-
-        <div class="topbar-row">
-          <i class="fa-solid fa-envelope"></i>
-          <a href="mailto:info@springcitychamberofcommerce.com">
-            info@springcitychamberofcommerce.com
-          </a>
-
-          <span class="sep">|</span>
-
-          <i class="fa-solid fa-phone"></i>
-          <a href="tel:4236820007">423-682-0007</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- B2 - MENU TOGGLE -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-
-    <!-- B3 - HEADER -->
-    <header class="header">
-      <div class="header-inner">
-        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
-          <div class="brand-mark">
-            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
-          </div>
-
-          <div class="brand-copy">
-            <h1>SPRING CITY</h1>
-            <p>CHAMBER OF COMMERCE</p>
-          </div>
-        </a>
-
-        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
-          <i class="fa-solid fa-bars"></i>
-        </label>
-      </div>
-
-      <nav class="mobile-menu" aria-label="Mobile navigation">
-        <a href="./index.html">Home</a>
-        <a href="#quick-access">Quick Access</a>
-        <a href="#site-map">Quick Site Map</a>
-        <a href="./events-calendar.html">Events</a>
-        <a href="./membershipdirectory.html">Members</a>
-        <a href="./contact-5.html">Contact</a>
-        <a href="./membershipapplication.html" class="join">Join</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./index.html" aria-label="Spring City Chamber of Commerce home">
+        <img class="brand-mark" src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <span class="brand-fallback" aria-hidden="true">SC</span>
+        <span class="brand-text"><span class="brand-name">Spring City Chamber</span><span class="brand-place">Tennessee</span></span>
+      </a>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle">
+      <label class="menu-button" for="nav-toggle" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></label>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <div class="nav-group"><span class="nav-label">Explore</span><div class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./membershipdirectory.html">Members</a>
+          <a href="./events-calendar.html">Events</a>
+          <a href="./visitsc.html">Visit Spring City</a>
+          <a href="./contact-5.html">Contact</a>
+        </div></div>
+        <a class="member-button" href="./membershipapplication.html"><i class="fa-solid fa-circle-plus"></i> Become a Member</a>
       </nav>
-    </header>
-
-    <main>
-
-      <!-- C1 - HERO -->
-      <section class="hero">
-        <div class="shell hero-content">
-          <div class="hero-copy">
-            <h2>A helpful place for local business, events, and community information.</h2>
-
-            <p>
-              We’re here to support local businesses, celebrate our community,
-              and welcome visitors to historic Spring City, Tennessee, our home by the lake.
-            </p>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#quick-access" class="btn btn-primary">
-              <i class="fa-regular fa-compass"></i>
-              <span>Start Here</span>
-            </a>
-
-            <a href="#site-map" class="btn btn-light">
-              <i class="fa-regular fa-map"></i>
-              <span>View Site Map</span>
-            </a>
-
-            <a href="./events-calendar.html" class="btn btn-blue wide">
-              <i class="fa-regular fa-calendar"></i>
-              <span>Community Calendar</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- D1 - QUICK ACCESS -->
-      <section class="section" id="quick-access">
-        <div class="shell">
-          <div class="section-title">
-            <h3>Quick Access</h3>
-          </div>
-
-          <div class="quick-grid">
-            <a href="./membershipdirectory.html" class="quick-card">
-              <div class="quick-icon navy">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-              <span>Find a<br />Business</span>
-            </a>
-
-            <a href="./events-calendar.html" class="quick-card">
-              <div class="quick-icon blue">
-                <i class="fa-regular fa-calendar"></i>
-              </div>
-              <span>See<br />Events</span>
-            </a>
-
-            <a href="./membershipapplication.html" class="quick-card">
-              <div class="quick-icon gold">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <span>Join the<br />Chamber</span>
-            </a>
-
-            <a href="./visitsc.html" class="quick-card">
-              <div class="quick-icon blue">
-                <i class="fa-solid fa-camera"></i>
-              </div>
-              <span>Visit<br />Spring City</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- E1 - QUICK SITE MAP -->
-      <section class="section" id="site-map">
-        <div class="shell">
-          <div class="section-title">
-            <h3>Quick Site Map</h3>
-          </div>
-
-          <div class="accordion">
-
-            <!-- E2 - MEMBERS -->
-            <details>
-              <summary>
-                <i class="fa-solid fa-users"></i>
-                <span>Members</span>
-                <i class="fa-solid fa-chevron-down caret"></i>
-              </summary>
-
-              <div class="accordion-content">
-                <a href="./membershipdirectory.html">Membership Directory</a>
-                <a href="./membershipapplication.html">Join the Chamber</a>
-                <a href="./about-1.html">Member of the Month</a>
-              </div>
-            </details>
-
-            <!-- E3 - EVENTS -->
-            <details>
-              <summary>
-                <i class="fa-regular fa-calendar"></i>
-                <span>Events</span>
-                <i class="fa-solid fa-chevron-down caret"></i>
-              </summary>
-
-              <div class="accordion-content">
-                <a href="./missspringcity.html">Miss Spring City</a>
-                <a href="./golfclassic.html">Golf Classic</a>
-                <a href="./springcitysummernights.html">Summer Nights</a>
-                <a href="./membershipbanquet.html">Membership Banquet</a>
-                <a href="./autumnfestival.html">Autumn Festival</a>
-                <a href="./christmasatthedepot.html">Christmas at the Depot</a>
-                <a href="./communityevents.html">Other Community Events</a>
-                <a href="./events-calendar.html">Events Calendar</a>
-              </div>
-            </details>
-
-            <!-- E4 - CHAMBER -->
-            <details>
-              <summary>
-                <i class="fa-solid fa-building-columns"></i>
-                <span>Chamber</span>
-                <i class="fa-solid fa-chevron-down caret"></i>
-              </summary>
-
-              <div class="accordion-content">
-                <a href="./aboutus.html">About Us</a>
-                <a href="./boardofdirectors.html">Board of Directors</a>
-                <a href="./volunteerapplication.html">Volunteer Application</a>
-                <a href="./contact-5.html">Contact Us</a>
-              </div>
-            </details>
-
-            <!-- E5 - VISIT SPRING CITY -->
-            <details>
-              <summary>
-                <i class="fa-solid fa-camera"></i>
-                <span>Visit Spring City</span>
-                <i class="fa-solid fa-chevron-down caret"></i>
-              </summary>
-
-              <div class="accordion-content">
-                <a href="./visitsc.html">Welcome</a>
-                <a href="./attractions-recreation.html">Attractions & Recreation</a>
-                <a href="./diningoptions.html">Dining Options</a>
-                <a href="./lodging.html">Lodging</a>
-                <a href="./government.html">Government</a>
-              </div>
-            </details>
-
-            <!-- E6 - CALENDAR -->
-            <details>
-              <summary>
-                <i class="fa-regular fa-calendar-days"></i>
-                <span>Calendar</span>
-                <i class="fa-solid fa-chevron-down caret"></i>
-              </summary>
-
-              <div class="accordion-content">
-                <a href="./events-calendar.html">Calendar of Events</a>
-                <a href="./communityevents.html">Community Event Listings</a>
-                <a href="./christmasatthedepot.html">Seasonal Event Details</a>
-              </div>
-            </details>
-
-            <!-- E7 - CONTACT -->
-            <details>
-              <summary>
-                <i class="fa-solid fa-envelope"></i>
-                <span>Contact</span>
-                <i class="fa-solid fa-chevron-down caret"></i>
-              </summary>
-
-              <div class="accordion-content">
-                <a href="./contact-5.html">Contact the Chamber</a>
-                <a href="mailto:info@springcitychamberofcommerce.com">Email the Chamber</a>
-                <a href="tel:4236820007">Call 423-682-0007</a>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- F1 - FEATURE CARDS -->
-      <section class="section feature-section">
-        <div class="shell">
-          <div class="feature-row">
-
-            <!-- F2 - BUSINESS CARD -->
-            <article class="feature-card">
-              <div class="feature-image feature-business">
-                <div class="feature-badge navy">
-                  <i class="fa-solid fa-briefcase"></i>
-                </div>
-              </div>
-
-              <div class="feature-body">
-                <h4>For Businesses</h4>
-                <p>
-                  Tools, connections, and resources to help your business grow and thrive in Spring City.
-                </p>
-                <a href="./membershipdirectory.html">Learn More →</a>
-              </div>
-            </article>
-
-            <!-- F3 - COMMUNITY CARD -->
-            <article class="feature-card">
-              <div class="feature-image feature-community">
-                <div class="feature-badge gold">
-                  <i class="fa-solid fa-users"></i>
-                </div>
-              </div>
-
-              <div class="feature-body">
-                <h4>For the Community</h4>
-                <p>
-                  Working together to enhance the quality of life and build a stronger community.
-                </p>
-                <a href="./communityevents.html">Learn More →</a>
-              </div>
-            </article>
-
-            <!-- F4 - VISITOR CARD -->
-            <article class="feature-card">
-              <div class="feature-image feature-visitors">
-                <div class="feature-badge blue">
-                  <i class="fa-solid fa-camera"></i>
-                </div>
-              </div>
-
-              <div class="feature-body">
-                <h4>For Visitors</h4>
-                <p>
-                  Plan your visit and experience the charm, beauty, and hospitality of Spring City.
-                </p>
-                <a href="./visitsc.html">Learn More →</a>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- G1 - HELP BAND -->
-      <section class="help-band">
-        <div class="shell">
-          <div class="help-inner">
-            <div class="help-icon">
-              <i class="fa-solid fa-comment-dots"></i>
-            </div>
-
-            <div class="help-copy">
-              <h5>We’re Here to Help</h5>
-              <p>Have a question or need assistance? Our team is ready to help.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- H1 - STICKY CONTACT FOOTER -->
-    <div class="bottom-contact">
-      <div class="bottom-contact-inner">
-
-        <a
-          href="https://maps.google.com/?q=245+Church+Street+Spring+City+TN+37381"
-          class="contact-chip"
-        >
-          <i class="fa-solid fa-location-dot"></i>
-          <span>245 Church Street<br />Spring City, TN 37381</span>
-        </a>
-
-        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email Chamber</span>
-        </a>
-
-        <a href="tel:4236820007" class="contact-chip">
-          <i class="fa-solid fa-phone"></i>
-          <span>423-682-0007</span>
-        </a>
-
+    </div>
+  </header>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Spring City, Tennessee</p>
+      <h1>Connecting local business, community events, and visitors.</h1>
+      <p class="lead">Use this site to find Chamber members, apply for membership, explore community events, and connect with the Spring City Chamber of Commerce.</p>
+      <div class="actions">
+        <a class="quick-link" href="./membershipdirectory.html"><i class="fa-solid fa-store"></i> Find a Business</a>
+        <a class="quick-link" href="./events-calendar.html"><i class="fa-solid fa-calendar-days"></i> View Events</a>
+        <a class="quick-link" href="./membershipapplication.html"><i class="fa-solid fa-user-plus"></i> Join the Chamber</a>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-head">
+        <h2>Chamber Resources</h2>
+        <p>These core pages are ready for GitHub Pages and use consistent root-level filenames.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card"><i class="fa-solid fa-address-book"></i><h3>Members</h3><p>Browse the member directory or start a new membership application.</p><a class="card-link" href="./membershipdirectory.html">Open directory</a></article>
+        <article class="card"><i class="fa-solid fa-calendar-check"></i><h3>Events</h3><p>Find Chamber programs, seasonal festivals, and community happenings.</p><a class="card-link" href="./events-calendar.html">Open calendar</a></article>
+        <article class="card"><i class="fa-solid fa-map-location-dot"></i><h3>Visit Spring City</h3><p>Plan a local visit with attractions, dining, lodging, and government resources.</p><a class="card-link" href="./visitsc.html">Visitor information</a></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>Spring City Chamber of Commerce</strong></p>
+      <div class="footer-links">
+        <a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener">Visit Us</a>
+        <a href="mailto:info@springcitychamberofcommerce.com">Email Us</a>
+        <a href="tel:14236820007">Call Us</a>
       </div>
     </div>
-
-  </div>
+  </footer>
+  <nav class="bottom-contact" aria-label="Quick contact">
+    <a href="https://www.google.com/maps/search/?api=1&query=390%20Front%20Street%2C%20Spring%20City%2C%20TN%2037381" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i><span>Visit Us</span></a>
+    <a href="mailto:info@springcitychamberofcommerce.com"><i class="fa-solid fa-envelope"></i><span>Email Us</span></a>
+    <a href="tel:14236820007"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
+  </nav>
 </body>
 </html>
