@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- H1 - Spring City Chamber Membership Banquet Event Page -->
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Membership Banquet | Spring City Chamber of Commerce</title>
+  <meta
+    name="description"
+    content="Spring City Chamber Annual Membership and Installation of Officers Banquet event details, tickets, tables, silent auction, location, and contact information."
+  />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --navy: #0b3a67;
+      --navy-dark: #062b4d;
+      --gold: #c99940;
+      --gold-dark: #9b6f21;
+      --cream: #fbf7f0;
+      --text: #17314a;
+      --muted: #637384;
+      --line: rgba(11, 58, 103, 0.14);
+      --soft-line: rgba(11, 58, 103, 0.08);
+      --shadow: 0 12px 30px rgba(11, 58, 103, 0.1);
+      --purple: #7351c7;
+      --purple-soft: #f5efff;
+      --green: #2f6b4f;
+      --green-soft: #eef8f2;
+      --pink: #b94668;
+      --pink-soft: #fff3f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ece9e4;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .app {
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--cream);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shell {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: #ffffff;
+      padding: env(safe-area-inset-top, 0px) 0 10px;
+      font-size: 12px;
+    }
+
+    .topbar-inner {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1.25;
+    }
+
+    .topbar a {
+      color: #ffffff;
+    }
+
+    .sep {
+      opacity: 0.45;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      width: calc(100% - 28px);
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 18px rgba(11, 58, 103, 0.12);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      line-height: 0.92;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-copy p {
+      margin: 2px 0 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .menu-button {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .menu-button i {
+      font-size: 29px;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: calc(100% - 28px);
+      margin: 0 auto 12px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #f4f8fc;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .mobile-menu a.join {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .menu-toggle:checked ~ .header .mobile-menu {
+      display: grid;
+    }
+
+    .event-hero {
+      min-height: 430px;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(250, 247, 240, 0.97) 0%,
+          rgba(250, 247, 240, 0.84) 52%,
+          rgba(250, 247, 240, 0.16) 88%
+        ),
+        url("./assets/membershipbanquet.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .hero-content {
+      padding: 24px 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .event-label {
+      width: fit-content;
+      margin: 0 0 10px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(115, 81, 199, 0.14);
+      color: var(--purple);
+      border: 1px solid rgba(115, 81, 199, 0.24);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 315px;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 41px;
+      line-height: 0.94;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy p {
+      margin: 13px 0 0;
+      color: #2f4356;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 8px;
+      max-width: 330px;
+      margin-top: 16px;
+    }
+
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 42px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(11, 58, 103, 0.12);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(11, 58, 103, 0.06);
+    }
+
+    .meta-pill i {
+      color: var(--gold-dark);
+      width: 18px;
+      text-align: center;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 9px;
+      max-width: 330px;
+    }
+
+    .hero-actions .wide {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.08);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy);
+      border-color: rgba(11, 58, 103, 0.22);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(201, 153, 64, 0.62);
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .status-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .status-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .status-card p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .info-card {
+      padding: 14px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+    }
+
+    .info-card.full {
+      grid-column: 1 / -1;
+    }
+
+    .info-card i {
+      color: var(--purple);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .info-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .info-card p {
+      margin: 7px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .price-card {
+      min-height: 120px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+      display: grid;
+      align-content: center;
+      text-align: center;
+    }
+
+    .price-card strong {
+      display: block;
+      color: var(--gold-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      line-height: 0.9;
+    }
+
+    .price-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+    }
+
+    .time-badge {
+      min-height: 54px;
+      border-radius: 12px;
+      background: var(--purple-soft);
+      color: var(--purple);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.1;
+      padding: 8px;
+    }
+
+    .timeline-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .timeline-card p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--purple-soft);
+      color: var(--purple);
+      font-size: 19px;
+    }
+
+    .feature-row h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .feature-row p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .location-card {
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .location-map {
+      min-height: 145px;
+      background:
+        linear-gradient(135deg, rgba(115, 81, 199, 0.16), rgba(201, 153, 64, 0.18)),
+        #edf3fa;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      text-align: center;
+      padding: 18px;
+    }
+
+    .location-map i {
+      font-size: 36px;
+      color: var(--purple);
+      margin-bottom: 8px;
+    }
+
+    .location-map strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .location-body {
+      padding: 15px;
+    }
+
+    .location-body h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .location-body p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .location-body .btn {
+      width: 100%;
+      margin-top: 13px;
+    }
+
+    .contact-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .contact-card p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .bottom-contact {
+      position: sticky;
+      bottom: 0;
+      z-index: 40;
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .bottom-contact-inner {
+      width: calc(100% - 16px);
+      min-height: 62px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 6px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    .contact-chip:last-child {
+      border-right: none;
+    }
+
+    .contact-chip i {
+      font-size: 18px;
+    }
+
+    .contact-chip strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 390px) {
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+      }
+
+      .brand-copy h1 {
+        font-size: 28px;
+      }
+
+      .brand-copy p {
+        font-size: 11px;
+      }
+
+      .hero-copy h2 {
+        font-size: 36px;
+      }
+
+      .hero-copy p {
+        font-size: 14px;
+      }
+
+      .info-grid,
+      .price-grid {
+        gap: 8px;
+      }
+
+      .info-card h4 {
+        font-size: 12px;
+      }
+
+      .price-card strong {
+        font-size: 33px;
+      }
+
+      .timeline-card {
+        grid-template-columns: 64px 1fr;
+      }
+
+      .contact-chip {
+        font-size: 10px;
+        gap: 5px;
+      }
+
+      .contact-chip i {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- TOP CONTACT BAR -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>390 Front Street, Spring City, TN 37381</span>
+        </div>
+
+        <div class="topbar-row">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@springcitychamberofcommerce.com">
+            info@springcitychamberofcommerce.com
+          </a>
+          <span class="sep">|</span>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:4236820007">423-682-0007</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU TOGGLE -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
+          <div class="brand-mark">
+            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
+          </div>
+
+          <div class="brand-copy">
+            <h1>SPRING CITY</h1>
+            <p>CHAMBER OF COMMERCE</p>
+          </div>
+        </a>
+
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="./index.html">Home</a>
+        <a href="./membershipdirectory.html">Members</a>
+        <a href="./events-calendar.html">Events</a>
+        <a href="./visitsc.html">Visit Spring City</a>
+        <a href="./contact-5.html">Contact</a>
+        <a href="./membershipapplication.html" class="join">Become a Member</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="event-hero">
+        <div class="shell hero-content">
+          <div class="hero-copy">
+            <p class="event-label">Chamber Dinner</p>
+            <h2>Annual Membership & Installation Banquet</h2>
+            <p>
+              A Chamber gathering for dinner, awards, officer installation,
+              silent auction support, and member connection.
+            </p>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-pill">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>Tuesday, September 9</span>
+            </div>
+
+            <div class="meta-pill">
+              <i class="fa-solid fa-clock"></i>
+              <span>Visitors open 5:30 PM, dinner served 6:00 PM</span>
+            </div>
+
+            <div class="meta-pill">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Wolf Creek Baptist Church</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#tickets" class="btn btn-primary">
+              <i class="fa-solid fa-ticket"></i>
+              Tickets
+            </a>
+
+            <a href="#auction" class="btn btn-gold">
+              <i class="fa-solid fa-gift"></i>
+              Auction
+            </a>
+
+            <a href="#location" class="btn btn-light wide">
+              <i class="fa-solid fa-map-location-dot"></i>
+              Location
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATUS -->
+      <section class="section">
+        <div class="shell">
+          <div class="status-card">
+            <h3>Reservation Status</h3>
+            <p>
+              Reservations are currently closed. This page can be updated when the Chamber
+              opens reservations or posts the banquet form for the next event cycle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENT DETAILS -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Event Details</h3>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card">
+              <i class="fa-solid fa-utensils"></i>
+              <h4>Dinner</h4>
+              <p>Dinner is served at 6:00 PM.</p>
+            </article>
+
+            <article class="info-card">
+              <i class="fa-solid fa-users"></i>
+              <h4>Members</h4>
+              <p>Annual Chamber membership gathering.</p>
+            </article>
+
+            <article class="info-card">
+              <i class="fa-solid fa-user-tie"></i>
+              <h4>Officers</h4>
+              <p>Installation of officers included in the event.</p>
+            </article>
+
+            <article class="info-card">
+              <i class="fa-solid fa-microphone"></i>
+              <h4>Speaker</h4>
+              <p>Guest speaker to be announced.</p>
+            </article>
+
+            <article class="info-card full">
+              <i class="fa-solid fa-circle-info"></i>
+              <h4>About the Banquet</h4>
+              <p>
+                The Annual Membership and Installation of Officers Banquet brings Chamber members
+                together for dinner, recognition, leadership updates, and community support.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TICKETS -->
+      <section class="section" id="tickets">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Tickets</h3>
+          </div>
+
+          <div class="price-grid">
+            <article class="price-card">
+              <strong>$35</strong>
+              <span>Individual Ticket</span>
+            </article>
+
+            <article class="price-card">
+              <strong>$250</strong>
+              <span>Table of 8</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Schedule</h3>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-card">
+              <div class="time-badge">5:30<br />PM</div>
+              <div>
+                <h4>Doors Open</h4>
+                <p>Visitors and guests may arrive and get settled.</p>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div class="time-badge">6:00<br />PM</div>
+              <div>
+                <h4>Dinner Served</h4>
+                <p>Dinner begins for attendees and reserved tables.</p>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div class="time-badge">TBA</div>
+              <div>
+                <h4>Program & Speaker</h4>
+                <p>Guest speaker, caterer, and program details can be updated when announced.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUCTION -->
+      <section class="section" id="auction">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Silent Auction</h3>
+          </div>
+
+          <div class="feature-list">
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <div>
+                <h4>Scholarship Silent Auction</h4>
+                <p>The Chamber is accepting items for the Scholarship Silent Auction.</p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div>
+                <h4>Support Scholarships</h4>
+                <p>Auction donations help support scholarship-focused Chamber programs.</p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <div>
+                <h4>Business Visibility</h4>
+                <p>Businesses can support the event through auction donations and community involvement.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOCATION -->
+      <section class="section" id="location">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Location</h3>
+          </div>
+
+          <div class="location-card">
+            <div class="location-map">
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <strong>Wolf Creek Baptist Church</strong>
+              </div>
+            </div>
+
+            <div class="location-body">
+              <h3>Wolf Creek Baptist Church</h3>
+              <p>
+                Banquet location for the Annual Membership and Installation of Officers Banquet.
+              </p>
+
+              <a
+                href="https://maps.google.com/?q=Wolf+Creek+Baptist+Church+Spring+City+TN"
+                class="btn btn-gold"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Map
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT CTA -->
+      <section class="section">
+        <div class="shell">
+          <div class="contact-card">
+            <h3>Questions about the Banquet?</h3>
+            <p>
+              Contact the Chamber for reservation questions, silent auction items,
+              ticket availability, or event details.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-light" href="tel:4236820007">
+                <i class="fa-solid fa-phone"></i>
+                Call
+              </a>
+
+              <a class="btn btn-light" href="mailto:info@springcitychamberofcommerce.com?subject=Membership%20Banquet%20Question">
+                <i class="fa-solid fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- STICKY CONTACT FOOTER -->
+    <div class="bottom-contact">
+      <div class="bottom-contact-inner">
+        <a
+          href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381"
+          class="contact-chip"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>Visit Us</strong>
+            390 Front Street
+          </span>
+        </a>
+
+        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
+          <i class="fa-solid fa-envelope"></i>
+          <span>
+            <strong>Email Us</strong>
+            Email Chamber
+          </span>
+        </a>
+
+        <a href="tel:4236820007" class="contact-chip">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Call Us</strong>
+            423-682-0007
+          </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

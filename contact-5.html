@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- H1 - Spring City Chamber Contact Page -->
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Contact | Spring City Chamber of Commerce</title>
+  <meta
+    name="description"
+    content="Contact the Spring City Chamber of Commerce. Find office address, phone number, email, hours, map link, membership questions, event questions, and visitor support."
+  />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --navy: #0b3a67;
+      --navy-dark: #062b4d;
+      --gold: #c99940;
+      --gold-dark: #9b6f21;
+      --cream: #fbf7f0;
+      --text: #17314a;
+      --muted: #637384;
+      --line: rgba(11, 58, 103, 0.14);
+      --soft-line: rgba(11, 58, 103, 0.08);
+      --shadow: 0 12px 30px rgba(11, 58, 103, 0.1);
+
+      --blue: #1d72c9;
+      --blue-soft: #eaf4ff;
+      --green: #2f6b4f;
+      --green-soft: #eef8f2;
+      --purple: #7351c7;
+      --purple-soft: #f5efff;
+      --orange: #b45b20;
+      --orange-soft: #fff4e9;
+      --red: #a9352a;
+      --red-soft: #fff1ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ece9e4;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .app {
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--cream);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shell {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: #ffffff;
+      padding: env(safe-area-inset-top, 0px) 0 10px;
+      font-size: 12px;
+    }
+
+    .topbar-inner {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1.25;
+    }
+
+    .topbar a {
+      color: #ffffff;
+    }
+
+    .sep {
+      opacity: 0.45;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      width: calc(100% - 28px);
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 18px rgba(11, 58, 103, 0.12);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      line-height: 0.92;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-copy p {
+      margin: 2px 0 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .menu-button {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .menu-button i {
+      font-size: 29px;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: calc(100% - 28px);
+      margin: 0 auto 12px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #f4f8fc;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .mobile-menu a.join {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .menu-toggle:checked ~ .header .mobile-menu {
+      display: grid;
+    }
+
+    .contact-hero {
+      min-height: 430px;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(250, 247, 240, 0.97) 0%,
+          rgba(250, 247, 240, 0.84) 52%,
+          rgba(250, 247, 240, 0.16) 88%
+        ),
+        url("./assets/contact.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .hero-content {
+      padding: 24px 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      width: fit-content;
+      margin: 0 0 10px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(29, 114, 201, 0.13);
+      color: var(--blue);
+      border: 1px solid rgba(29, 114, 201, 0.22);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 315px;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 43px;
+      line-height: 0.94;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy p {
+      margin: 13px 0 0;
+      color: #2f4356;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 9px;
+      max-width: 330px;
+    }
+
+    .hero-actions .wide {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.08);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy);
+      border-color: rgba(11, 58, 103, 0.22);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(201, 153, 64, 0.62);
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .intro-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      line-height: 1;
+    }
+
+    .intro-card p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-main-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 21px;
+    }
+
+    .contact-main-card.phone .contact-icon {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .contact-main-card.email .contact-icon {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .contact-main-card.location .contact-icon {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .contact-main-card.hours .contact-icon {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .contact-main-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-main-card p,
+    .contact-main-card a {
+      display: block;
+      margin: 5px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .map-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(201, 153, 64, 0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .map-top {
+      min-height: 160px;
+      background:
+        linear-gradient(135deg, rgba(29, 114, 201, 0.16), rgba(201, 153, 64, 0.2)),
+        #edf3fa;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+      color: var(--navy);
+    }
+
+    .map-top i {
+      font-size: 42px;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .map-top strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .map-body {
+      padding: 15px;
+    }
+
+    .map-body h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .map-body p {
+      margin: 9px 0 0;
+      color: #2f4356;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .map-actions {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .category-card {
+      min-height: 132px;
+      padding: 13px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+      display: grid;
+      align-content: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-top: 5px solid var(--blue);
+      pointer-events: none;
+    }
+
+    .category-card.membership::before {
+      border-top-color: var(--blue);
+    }
+
+    .category-card.events::before {
+      border-top-color: var(--orange);
+    }
+
+    .category-card.visitor::before {
+      border-top-color: var(--green);
+    }
+
+    .category-card.sponsor::before {
+      border-top-color: var(--purple);
+    }
+
+    .category-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 9px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 18px;
+    }
+
+    .category-card.events .category-icon {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .category-card.visitor .category-icon {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .category-card.sponsor .category-icon {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .category-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .category-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .email-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .email-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .email-card p {
+      margin: 9px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .email-actions {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .tip-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .tip-card {
+      padding: 14px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+    }
+
+    .tip-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .tip-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .link-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .link-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .link-card p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .link-actions {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .bottom-contact {
+      position: sticky;
+      bottom: 0;
+      z-index: 40;
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .bottom-contact-inner {
+      width: calc(100% - 16px);
+      min-height: 62px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 6px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    .contact-chip:last-child {
+      border-right: none;
+    }
+
+    .contact-chip i {
+      font-size: 18px;
+    }
+
+    .contact-chip strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 390px) {
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+      }
+
+      .brand-copy h1 {
+        font-size: 28px;
+      }
+
+      .brand-copy p {
+        font-size: 11px;
+      }
+
+      .hero-copy h2 {
+        font-size: 37px;
+      }
+
+      .hero-copy p {
+        font-size: 14px;
+      }
+
+      .category-grid {
+        gap: 8px;
+      }
+
+      .category-card {
+        min-height: 122px;
+      }
+
+      .category-card h4 {
+        font-size: 20px;
+      }
+
+      .category-card p {
+        font-size: 11px;
+      }
+
+      .contact-main-card {
+        grid-template-columns: 48px 1fr;
+      }
+
+      .contact-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .contact-chip {
+        font-size: 10px;
+        gap: 5px;
+      }
+
+      .contact-chip i {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- TOP CONTACT BAR -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>390 Front Street, Spring City, TN 37381</span>
+        </div>
+
+        <div class="topbar-row">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@springcitychamberofcommerce.com">
+            info@springcitychamberofcommerce.com
+          </a>
+          <span class="sep">|</span>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:4236820007">423-682-0007</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU TOGGLE -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
+          <div class="brand-mark">
+            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
+          </div>
+
+          <div class="brand-copy">
+            <h1>SPRING CITY</h1>
+            <p>CHAMBER OF COMMERCE</p>
+          </div>
+        </a>
+
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="./index.html">Home</a>
+        <a href="./membershipdirectory.html">Members</a>
+        <a href="./events-calendar.html">Events</a>
+        <a href="./visitsc.html">Visit Spring City</a>
+        <a href="./contact-5.html">Contact</a>
+        <a href="./membershipapplication.html" class="join">Become a Member</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="contact-hero">
+        <div class="shell hero-content">
+          <div class="hero-copy">
+            <p class="hero-label">Contact the Chamber</p>
+            <h2>How can we help?</h2>
+            <p>
+              Reach out for membership questions, visitor information, event details,
+              sponsorships, volunteer opportunities, or local business resources.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="tel:4236820007" class="btn btn-primary">
+              <i class="fa-solid fa-phone"></i>
+              Call
+            </a>
+
+            <a href="mailto:info@springcitychamberofcommerce.com" class="btn btn-gold">
+              <i class="fa-solid fa-envelope"></i>
+              Email
+            </a>
+
+            <a
+              href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381"
+              class="btn btn-light wide"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-map-location-dot"></i>
+              Open Map
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section class="section">
+        <div class="shell">
+          <div class="intro-card">
+            <h3>Start here</h3>
+            <p>
+              This page gives visitors, members, sponsors, volunteers, and local businesses
+              the fastest ways to reach the Spring City Chamber of Commerce.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT INFO -->
+      <section class="section" id="contact-info">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Contact Info</h3>
+          </div>
+
+          <div class="contact-grid">
+
+            <article class="contact-main-card phone">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:4236820007">423-682-0007</a>
+              </div>
+            </article>
+
+            <article class="contact-main-card email">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:info@springcitychamberofcommerce.com">
+                  info@springcitychamberofcommerce.com
+                </a>
+              </div>
+            </article>
+
+            <article class="contact-main-card location">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4>Office</h4>
+                <a
+                  href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  390 Front Street, Spring City, TN 37381
+                </a>
+              </div>
+            </article>
+
+            <article class="contact-main-card hours">
+              <div class="contact-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <h4>Office Hours</h4>
+                <p>Monday-Wednesday, 8:00 AM - 4:00 PM</p>
+              </div>
+            </article>
+
+            <article class="contact-main-card">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div>
+                <h4>Mailing Address</h4>
+                <p>P.O. Box 355, Spring City, TN 37381</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Visit Us</h3>
+          </div>
+
+          <article class="map-card">
+            <div class="map-top">
+              <div>
+                <i class="fa-solid fa-train"></i>
+                <strong>Inside the Train Depot</strong>
+              </div>
+            </div>
+
+            <div class="map-body">
+              <h3>Spring City Chamber Office</h3>
+              <p>
+                The Chamber office is located at 390 Front Street inside the train depot.
+                Visitors may also use the outside drop box when needed.
+              </p>
+
+              <div class="map-actions">
+                <a
+                  href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open Google Maps
+                </a>
+
+                <a href="tel:4236820007" class="btn btn-light">
+                  Call Before Visiting
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHAT TO CONTACT FOR -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Contact About</h3>
+          </div>
+
+          <div class="category-grid">
+            <article class="category-card membership">
+              <div class="category-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <h4>Membership</h4>
+              <p>Joining the Chamber, updating a listing, dues, or member benefits.</p>
+            </article>
+
+            <article class="category-card events">
+              <div class="category-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+              <h4>Events</h4>
+              <p>Festival details, applications, sponsorship, pageants, and calendars.</p>
+            </article>
+
+            <article class="category-card visitor">
+              <div class="category-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <h4>Visitors</h4>
+              <p>Where to eat, stay, visit, shop, or find local businesses.</p>
+            </article>
+
+            <article class="category-card sponsor">
+              <div class="category-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h4>Sponsors</h4>
+              <p>Sponsoring events, donating items, supporting scholarships, or partnering.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK EMAILS -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Quick Emails</h3>
+          </div>
+
+          <div class="email-card">
+            <h3>Choose the message that fits</h3>
+            <p>
+              These links open an email with a subject line already filled in, so visitors
+              can contact the Chamber faster.
+            </p>
+
+            <div class="email-actions">
+              <a
+                href="mailto:info@springcitychamberofcommerce.com?subject=Membership%20Question"
+                class="btn btn-primary"
+              >
+                Membership Question
+              </a>
+
+              <a
+                href="mailto:info@springcitychamberofcommerce.com?subject=Event%20Question"
+                class="btn btn-gold"
+              >
+                Event Question
+              </a>
+
+              <a
+                href="mailto:info@springcitychamberofcommerce.com?subject=Visitor%20Information%20Question"
+                class="btn btn-light"
+              >
+                Visitor Information
+              </a>
+
+              <a
+                href="mailto:info@springcitychamberofcommerce.com?subject=Sponsorship%20Question"
+                class="btn btn-light"
+              >
+                Sponsorship Question
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIPS -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Before You Reach Out</h3>
+          </div>
+
+          <div class="tip-grid">
+            <article class="tip-card">
+              <h4>For event applications</h4>
+              <p>
+                Include the event name, applicant name, phone number, email, and any deadline questions.
+              </p>
+            </article>
+
+            <article class="tip-card">
+              <h4>For business listings</h4>
+              <p>
+                Include business name, address, phone number, website, category, and what needs updated.
+              </p>
+            </article>
+
+            <article class="tip-card">
+              <h4>For visitor questions</h4>
+              <p>
+                Mention your date range and whether you need food, lodging, attractions, or event information.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- RELATED LINKS -->
+      <section class="section">
+        <div class="shell">
+          <div class="link-card">
+            <h3>Helpful pages</h3>
+            <p>
+              You may find what you need faster through the member directory, events calendar,
+              visitor guide, or membership application.
+            </p>
+
+            <div class="link-actions">
+              <a href="./membershipdirectory.html" class="btn btn-primary">
+                Member Directory
+              </a>
+
+              <a href="./events-calendar.html" class="btn btn-gold">
+                Events Calendar
+              </a>
+
+              <a href="./membershipapplication.html" class="btn btn-light">
+                Become a Member
+              </a>
+
+              <a href="./visitsc.html" class="btn btn-light">
+                Visit Spring City
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- STICKY CONTACT FOOTER -->
+    <div class="bottom-contact">
+      <div class="bottom-contact-inner">
+        <a
+          href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381"
+          class="contact-chip"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>Visit Us</strong>
+            390 Front Street
+          </span>
+        </a>
+
+        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
+          <i class="fa-solid fa-envelope"></i>
+          <span>
+            <strong>Email Us</strong>
+            Email Chamber
+          </span>
+        </a>
+
+        <a href="tel:4236820007" class="contact-chip">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Call Us</strong>
+            423-682-0007
+          </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

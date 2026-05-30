@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- H1 - Spring City Chamber Board of Directors Page -->
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Board of Directors | Spring City Chamber of Commerce</title>
+  <meta
+    name="description"
+    content="Meet the Spring City Chamber of Commerce Board of Directors, officers, leadership team, and Chamber representatives serving Spring City, Tennessee."
+  />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --navy: #0b3a67;
+      --navy-dark: #062b4d;
+      --gold: #c99940;
+      --gold-dark: #9b6f21;
+      --cream: #fbf7f0;
+      --text: #17314a;
+      --muted: #637384;
+      --line: rgba(11, 58, 103, 0.14);
+      --soft-line: rgba(11, 58, 103, 0.08);
+      --shadow: 0 12px 30px rgba(11, 58, 103, 0.1);
+
+      --blue: #1d72c9;
+      --blue-soft: #eaf4ff;
+      --green: #2f6b4f;
+      --green-soft: #eef8f2;
+      --purple: #7351c7;
+      --purple-soft: #f5efff;
+      --orange: #b45b20;
+      --orange-soft: #fff4e9;
+      --red: #a9352a;
+      --red-soft: #fff1ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ece9e4;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .app {
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--cream);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shell {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: #ffffff;
+      padding: env(safe-area-inset-top, 0px) 0 10px;
+      font-size: 12px;
+    }
+
+    .topbar-inner {
+      width: calc(100% - 28px);
+      margin: 0 auto;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1.25;
+    }
+
+    .topbar a {
+      color: #ffffff;
+    }
+
+    .sep {
+      opacity: 0.45;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      width: calc(100% - 28px);
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 18px rgba(11, 58, 103, 0.12);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      line-height: 0.92;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-copy p {
+      margin: 2px 0 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .menu-button {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .menu-button i {
+      font-size: 29px;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: calc(100% - 28px);
+      margin: 0 auto 12px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #f4f8fc;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .mobile-menu a.join {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .menu-toggle:checked ~ .header .mobile-menu {
+      display: grid;
+    }
+
+    .board-hero {
+      min-height: 430px;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(250, 247, 240, 0.97) 0%,
+          rgba(250, 247, 240, 0.84) 52%,
+          rgba(250, 247, 240, 0.16) 88%
+        ),
+        url("./assets/boardofdirectors.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .hero-content {
+      padding: 24px 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      width: fit-content;
+      margin: 0 0 10px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(11, 58, 103, 0.1);
+      color: var(--navy);
+      border: 1px solid rgba(11, 58, 103, 0.18);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 315px;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 43px;
+      line-height: 0.94;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy p {
+      margin: 13px 0 0;
+      color: #2f4356;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 9px;
+      max-width: 330px;
+    }
+
+    .hero-actions .wide {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.08);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy);
+      border-color: rgba(11, 58, 103, 0.22);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(201, 153, 64, 0.62);
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .intro-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      line-height: 1;
+    }
+
+    .intro-card p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .officer-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .officer-card {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 13px;
+      padding: 13px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .officer-photo {
+      width: 96px;
+      min-height: 112px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #edf3fa;
+      border: 1px solid var(--soft-line);
+    }
+
+    .officer-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .officer-info {
+      align-self: center;
+    }
+
+    .role-pill {
+      width: fit-content;
+      margin: 0 0 8px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(201, 153, 64, 0.14);
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .officer-info h4 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .officer-info p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .board-card {
+      min-height: 190px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+      overflow: hidden;
+    }
+
+    .board-photo {
+      height: 112px;
+      background: #edf3fa;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .board-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .board-info {
+      padding: 11px;
+    }
+
+    .board-info h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .board-info p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .category-card {
+      min-height: 132px;
+      padding: 13px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.05);
+      display: grid;
+      align-content: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-top: 5px solid var(--blue);
+      pointer-events: none;
+    }
+
+    .category-card.members::before {
+      border-top-color: var(--blue);
+    }
+
+    .category-card.events::before {
+      border-top-color: var(--orange);
+    }
+
+    .category-card.finance::before {
+      border-top-color: var(--green);
+    }
+
+    .category-card.community::before {
+      border-top-color: var(--purple);
+    }
+
+    .category-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 9px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 18px;
+    }
+
+    .category-card.events .category-icon {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .category-card.finance .category-icon {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .category-card.community .category-icon {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .category-card h4 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .category-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(11, 58, 103, 0.04);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 19px;
+    }
+
+    .feature-row:nth-child(2) .feature-icon {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .feature-row:nth-child(3) .feature-icon {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .feature-row:nth-child(4) .feature-icon {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .feature-row h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .feature-row p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .update-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8ea 0%, #ffffff 100%);
+      border: 1px solid rgba(201, 153, 64, 0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .update-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .update-card p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .update-actions {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .link-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .link-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .link-card p {
+      margin: 8px 0 0;
+      color: #2f4356;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .link-actions {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .contact-card {
+      padding: 15px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .contact-card p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .bottom-contact {
+      position: sticky;
+      bottom: 0;
+      z-index: 40;
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .bottom-contact-inner {
+      width: calc(100% - 16px);
+      min-height: 62px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 6px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    .contact-chip:last-child {
+      border-right: none;
+    }
+
+    .contact-chip i {
+      font-size: 18px;
+    }
+
+    .contact-chip strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 390px) {
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+      }
+
+      .brand-copy h1 {
+        font-size: 28px;
+      }
+
+      .brand-copy p {
+        font-size: 11px;
+      }
+
+      .hero-copy h2 {
+        font-size: 37px;
+      }
+
+      .hero-copy p {
+        font-size: 14px;
+      }
+
+      .officer-card {
+        grid-template-columns: 82px 1fr;
+      }
+
+      .officer-photo {
+        width: 82px;
+        min-height: 102px;
+      }
+
+      .officer-info h4 {
+        font-size: 22px;
+      }
+
+      .board-grid,
+      .category-grid {
+        gap: 8px;
+      }
+
+      .board-photo {
+        height: 96px;
+      }
+
+      .board-info h4 {
+        font-size: 12px;
+      }
+
+      .board-info p {
+        font-size: 10px;
+      }
+
+      .category-card {
+        min-height: 122px;
+      }
+
+      .category-card h4 {
+        font-size: 20px;
+      }
+
+      .category-card p {
+        font-size: 11px;
+      }
+
+      .contact-chip {
+        font-size: 10px;
+        gap: 5px;
+      }
+
+      .contact-chip i {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- TOP CONTACT BAR -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-row">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>390 Front Street, Spring City, TN 37381</span>
+        </div>
+
+        <div class="topbar-row">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@springcitychamberofcommerce.com">
+            info@springcitychamberofcommerce.com
+          </a>
+          <span class="sep">|</span>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:4236820007">423-682-0007</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU TOGGLE -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand" aria-label="Spring City Chamber home">
+          <div class="brand-mark">
+            <img src="./assets/logo.png" alt="Spring City Chamber of Commerce logo" />
+          </div>
+
+          <div class="brand-copy">
+            <h1>SPRING CITY</h1>
+            <p>CHAMBER OF COMMERCE</p>
+          </div>
+        </a>
+
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="./index.html">Home</a>
+        <a href="./membershipdirectory.html">Members</a>
+        <a href="./events-calendar.html">Events</a>
+        <a href="./visitsc.html">Visit Spring City</a>
+        <a href="./contact-5.html">Contact</a>
+        <a href="./membershipapplication.html" class="join">Become a Member</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="board-hero">
+        <div class="shell hero-content">
+          <div class="hero-copy">
+            <p class="hero-label">Chamber Leadership</p>
+            <h2>Board of Directors</h2>
+            <p>
+              Meet the Chamber leadership helping guide member support, events,
+              community connection, business visibility, and Spring City growth.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#officers" class="btn btn-primary">
+              <i class="fa-solid fa-user-tie"></i>
+              Officers
+            </a>
+
+            <a href="#board" class="btn btn-gold">
+              <i class="fa-solid fa-users"></i>
+              Board
+            </a>
+
+            <a href="./aboutus.html" class="btn btn-light wide">
+              <i class="fa-solid fa-circle-info"></i>
+              About the Chamber
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section class="section">
+        <div class="shell">
+          <div class="intro-card">
+            <h3>Local leadership, local focus</h3>
+            <p>
+              The Board of Directors helps guide the Chamber’s work across membership,
+              events, sponsorships, business support, visitor resources, and community partnerships.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFICERS -->
+      <section class="section" id="officers">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Officers</h3>
+          </div>
+
+          <div class="officer-grid">
+
+            <article class="officer-card">
+              <div class="officer-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber President" />
+              </div>
+
+              <div class="officer-info">
+                <p class="role-pill">President</p>
+                <h4>Board Member Name</h4>
+                <p>Use this space for the current Chamber president, business affiliation, or short leadership note.</p>
+              </div>
+            </article>
+
+            <article class="officer-card">
+              <div class="officer-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber Vice President" />
+              </div>
+
+              <div class="officer-info">
+                <p class="role-pill">Vice President</p>
+                <h4>Board Member Name</h4>
+                <p>Use this space for the current vice president and their business or community role.</p>
+              </div>
+            </article>
+
+            <article class="officer-card">
+              <div class="officer-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber Secretary" />
+              </div>
+
+              <div class="officer-info">
+                <p class="role-pill">Secretary</p>
+                <h4>Board Member Name</h4>
+                <p>Use this space for the current secretary and any relevant Chamber service details.</p>
+              </div>
+            </article>
+
+            <article class="officer-card">
+              <div class="officer-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber Treasurer" />
+              </div>
+
+              <div class="officer-info">
+                <p class="role-pill">Treasurer</p>
+                <h4>Board Member Name</h4>
+                <p>Use this space for the current treasurer and their organization or leadership note.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- BOARD MEMBERS -->
+      <section class="section" id="board">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Board Members</h3>
+          </div>
+
+          <div class="board-grid">
+
+            <article class="board-card">
+              <div class="board-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber board member" />
+              </div>
+              <div class="board-info">
+                <h4>Board Member Name</h4>
+                <p>Director</p>
+              </div>
+            </article>
+
+            <article class="board-card">
+              <div class="board-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber board member" />
+              </div>
+              <div class="board-info">
+                <h4>Board Member Name</h4>
+                <p>Director</p>
+              </div>
+            </article>
+
+            <article class="board-card">
+              <div class="board-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber board member" />
+              </div>
+              <div class="board-info">
+                <h4>Board Member Name</h4>
+                <p>Director</p>
+              </div>
+            </article>
+
+            <article class="board-card">
+              <div class="board-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber board member" />
+              </div>
+              <div class="board-info">
+                <h4>Board Member Name</h4>
+                <p>Director</p>
+              </div>
+            </article>
+
+            <article class="board-card">
+              <div class="board-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber board member" />
+              </div>
+              <div class="board-info">
+                <h4>Board Member Name</h4>
+                <p>Director</p>
+              </div>
+            </article>
+
+            <article class="board-card">
+              <div class="board-photo">
+                <img src="./assets/board/placeholder.jpg" alt="Spring City Chamber board member" />
+              </div>
+              <div class="board-info">
+                <h4>Board Member Name</h4>
+                <p>Director</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- BOARD RESPONSIBILITIES -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Board Focus</h3>
+          </div>
+
+          <div class="category-grid">
+            <article class="category-card members">
+              <div class="category-icon">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <h4>Members</h4>
+              <p>Support Chamber members, visibility, directory access, and local business connection.</p>
+            </article>
+
+            <article class="category-card events">
+              <div class="category-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+              <h4>Events</h4>
+              <p>Guide event planning, sponsorships, community gatherings, and seasonal activities.</p>
+            </article>
+
+            <article class="category-card finance">
+              <div class="category-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+              </div>
+              <h4>Funding</h4>
+              <p>Support fundraising, scholarships, sponsorship opportunities, and Chamber resources.</p>
+            </article>
+
+            <article class="category-card community">
+              <div class="category-icon">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <h4>Community</h4>
+              <p>Strengthen the bridge between businesses, residents, volunteers, visitors, and partners.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP ROLE -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h3>Leadership Role</h3>
+          </div>
+
+          <div class="feature-list">
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-compass"></i>
+              </div>
+              <div>
+                <h4>Direction</h4>
+                <p>The board helps keep Chamber work organized, practical, and aligned with community needs.</p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <div>
+                <h4>Partnerships</h4>
+                <p>Board members help connect businesses, organizations, volunteers, and local supporters.</p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+              </div>
+              <div>
+                <h4>Promotion</h4>
+                <p>Leadership supports event visibility, member promotion, visitor resources, and Chamber outreach.</p>
+              </div>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-icon">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div>
+                <h4>Service</h4>
+                <p>The board’s role is community-centered: helping Spring City stay active, connected, and supported.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- UPDATE NOTE -->
+      <section class="section">
+        <div class="shell">
+          <div class="update-card">
+            <h3>Need to update board information?</h3>
+            <p>
+              Replace the placeholder names, roles, affiliations, and photos once the current board list
+              is confirmed. This layout is built so you can easily add or remove board cards later.
+            </p>
+
+            <div class="update-actions">
+              <a href="mailto:info@springcitychamberofcommerce.com?subject=Board%20of%20Directors%20Update" class="btn btn-primary">
+                Send Board Update
+              </a>
+
+              <a href="./contact-5.html" class="btn btn-light">
+                Contact Page
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RELATED LINKS -->
+      <section class="section">
+        <div class="shell">
+          <div class="link-card">
+            <h3>Related Chamber pages</h3>
+            <p>
+              Learn more about the Chamber, membership, volunteer opportunities, and ways
+              to connect with Spring City’s business community.
+            </p>
+
+            <div class="link-actions">
+              <a href="./aboutus.html" class="btn btn-primary">
+                About the Chamber
+              </a>
+
+              <a href="./membershipapplication.html" class="btn btn-gold">
+                Become a Member
+              </a>
+
+              <a href="./volunteerapplication.html" class="btn btn-light">
+                Volunteer
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT CTA -->
+      <section class="section">
+        <div class="shell">
+          <div class="contact-card">
+            <h3>Questions for the Chamber?</h3>
+            <p>
+              Contact the Chamber for board information, membership questions, event support,
+              volunteer opportunities, or local business connection.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-light" href="tel:4236820007">
+                <i class="fa-solid fa-phone"></i>
+                Call
+              </a>
+
+              <a class="btn btn-light" href="mailto:info@springcitychamberofcommerce.com?subject=Board%20of%20Directors%20Question">
+                <i class="fa-solid fa-envelope"></i>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- STICKY CONTACT FOOTER -->
+    <div class="bottom-contact">
+      <div class="bottom-contact-inner">
+        <a
+          href="https://maps.google.com/?q=390+Front+Street+Spring+City+TN+37381"
+          class="contact-chip"
+        >
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <strong>Visit Us</strong>
+            390 Front Street
+          </span>
+        </a>
+
+        <a href="mailto:info@springcitychamberofcommerce.com" class="contact-chip">
+          <i class="fa-solid fa-envelope"></i>
+          <span>
+            <strong>Email Us</strong>
+            Email Chamber
+          </span>
+        </a>
+
+        <a href="tel:4236820007" class="contact-chip">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <strong>Call Us</strong>
+            423-682-0007
+          </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
